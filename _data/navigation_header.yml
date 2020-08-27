@@ -1,0 +1,11 @@
+# Navbar left menu navigation links
+left:
+
+# Navbar right menu navigation links
+right:
+
+  - title: Home
+    url: /
+
+  - title: Contact
+    url: /contact/

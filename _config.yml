@@ -1,0 +1,126 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site title and description
+title:              UI Testing Academy
+description:        UI Testing related content
+lang:               en
+
+# Site subpath, e.g. /blog
+baseurl:            ""
+
+# Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
+permalink:          /:categories/:title/
+
+# Site base hostname & protocol, e.g. http://example.com
+url:                ""
+
+# Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
+logo:               
+  
+# Default author settings
+author:
+    name:           Alex Zhukovich
+    title:          Android Developer  
+    avatar:         https://via.placeholder.com/80x80
+
+# Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
+authors:
+    alex:
+      name:         Alex Zhukovich
+      title:        Android Developer     
+      avatar:       https://via.placeholder.com/80x80
+
+# Social icons displayed in footer
+social:
+    email:
+    website:
+    facebook:
+    flickr:
+    dribbble:
+    github:
+    googleplus:
+    instagram:
+    linkedin:
+    pinterest:
+    twitter:
+    vimeo:
+    youtube:
+
+# Share button
+share:
+    post:           true # Display share buttons on a post page
+    twitter:        username # Enable by adding Twitter handle 
+    facebook:       true # Enable by setting true (Facebook handle not required)
+
+header:
+  image: https://via.placeholder.com/1728x600
+  # background: "rgba(0, 0, 0, 0.5)"
+  color: light
+  search: true
+
+# Default footer image settings
+footer:
+    copyright:      Made by Alex Zhukovich.
+
+# Disqus comments shortname, requires Disqus account https://disqus.com/
+disqus:
+    shortname:      # 1234
+
+# Google analytics code, get your code here https://www.google.com/analytics/
+google_analytics:
+
+# Pagination Settings
+pagination:
+  enabled:          true
+  per_page:         10
+  # permalink: '/page/:num/'
+  # title_suffix: ' - page :num'
+  # limit: 0
+  # sort_field: 'date'
+  # sort_reverse: true
+
+# Path to post content assets directory i.e post images, pdfs etc
+uploads:            /uploads/
+
+# Build settings
+markdown:           kramdown
+highlighter:        rouge
+
+gems:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-gist
+  - jekyll-avatar
+  - jekyll-paginate-v2
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+sass:
+  style:            compressed
+
+collections:
+  faqs:
+    output:         false
+  changelogs:
+    output:         false
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path:         ""
+      type:         posts
+    values:
+      layout:       post
+  # _pages
+  - scope:
+      path:         ""
+      type:         pages
+    values:
+      layout:       page

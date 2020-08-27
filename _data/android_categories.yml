@@ -1,0 +1,135 @@
+# Categories separated in sections
+- title: Specific of Android testing
+  subtitle:
+  category: specific
+  categories:
+
+    - permalink: /platform/android/specific/local-and-instrumentation-tests/
+      title: (WIP) Local and Instrumentation tests
+      desc: ...
+      icon: cog
+
+    - permalink: /platform/android/specific/installing-apk-to-device/
+      title: (WIP) Installing APK to device
+      desc: ...
+      icon: file-text
+
+    - permalink: /platform/android/specific/adb-commands/
+      title: (WIP) ADB commands
+      desc: ...
+      icon: settings
+      
+- title: Frameworks
+  subtitle:
+  category: frameworks
+  categories:
+
+    - permalink: /platform/android/frameworks/framework-comparison/
+      title: (WIP) Framework comparison
+      desc: 
+      icon: code
+
+    - permalink: /platform/android/frameworks/espresso/
+      title: (WIP) Espresso
+      desc: 
+      icon: code
+
+    - permalink: /platform/android/frameworks/uiautomator/
+      title: (WIP) UiAutmator
+      desc: 
+      icon: code
+
+    - permalink: /platform/android/frameworks/appium/
+      title: (WIP) Appium
+      desc: 
+      icon: code
+
+    - permalink: /platform/android/frameworks/barista/
+      title: (WIP) Barista
+      desc: 
+      icon: code
+
+    - permalink: /platform/android/frameworks/kakao/
+      title: (WIP) Kakao
+      desc: 
+      icon: code
+
+    - permalink: /platform/android/frameworks/kaspresso/
+      title: (WIP) Kaspresso
+      desc: 
+      icon: code
+
+    - permalink: /platform/android/frameworks/kautomator/
+      title: (WIP) KAutomator
+      desc: 
+      icon: code
+
+    - permalink: /platform/android/frameworks/compose-testing/
+      title: (WIP) Jetpack Compose testing
+      desc: 
+      icon: code
+
+- title: Tools
+  subtitle:
+  category: tools
+  categories:
+
+    - permalink: /platform/android/tools/uiautomator-viewer/
+      title: (WIP) UI Automator Viewer
+      desc: ...
+      icon: cog
+
+    - permalink: /platform/android/tools/layout-inspector/
+      title: (WIP) Layout Inspector
+      desc: ...
+      icon: file-tex
+
+- title: Domain Specific Language (DSL)
+  subtitle:
+  category: dsl
+  categories:
+
+    - permalink: /platform/android/dsl/what-is-dsl/
+      title: (WIP) What is Domain Specific Language (DSL)?
+      desc: ...
+      icon: cog
+
+    - permalink: /platform/android/dsl/building-dsl-for-android/
+      title: (WIP) Building DSL for Android testing
+      desc: ...
+      icon: file-tex
+
+- title: Best Practices
+  subtitle:
+  category: best-practices
+  categories:
+
+    - permalink: /platform/android/best-practices/best-practice-1/
+      title: (WIP) Best Practice 1
+      desc: ...
+      icon: cog
+
+    - permalink: /platform/android/best-practices/best-practice-2/
+      title: (WIP) Best Practice 2
+      desc: ...
+      icon: cog
+
+- title: Common Mistakes
+  subtitle:
+  category: common-mistake
+  categories:
+
+    - permalink: /platform/android/common-mistake/issue-1/
+      title: (WIP) Commin mistake 1
+      desc: ...
+      icon: cog
+
+    - permalink: /platform/android/common-mistake/issue-2/
+      title: (WIP) Commin mistake 2
+      desc: ...
+      icon: cog
+
+    - permalink: /platform/android/common-mistake/issue-3/
+      title: (WIP) Commin mistake 3
+      desc: ...
+      icon: cog

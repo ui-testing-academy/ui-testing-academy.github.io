@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<div class="uk-section uk-section-muted">
+  <div class="uk-container">
+    {% for section in site.data.home_categories %}
+      {% for item in section.categories %}
+        {% if page.url contains item.permalink %}
+          {% assign current_category = item %}
+          <ul class="uk-breadcrumb">
+            <li><a href="{{ "/" | relative_url }}">{{ site.data.translation[site.lang].help_center | default: "Help Center" }}</a></li>
+            {% if section.category %}
+              <li><a href="{{ "/" | relative_url }}#{{ section.category }}">{{ section.title }}</a></li>
+            {% endif %}
+            <li><span>{{ item.title }}</span></li>
+          </ul>
+          <div class="uk-grid-small" data-uk-grid>
+            <div class="uk-width-auto uk-text-primary">
+              <span class="uk-margin-xsmall-top" data-uk-icon="icon: {{ item.icon }}; ratio: 2.6"></span>
+            </div>
+            <div class="uk-width-expand">
+              <h1 class="uk-article-title uk-margin-remove">{{ item.title }}</h1>
+              <p class="uk-text-lead uk-text-muted uk-margin-small-top">{{ item.desc }}</p>
+            </div>
+          </div>
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    <div class="uk-margin-medium-top">
+      {% for post in paginator.posts %}
+        <div class="uk-card uk-card-category uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded uk-width-1-1">
+          <a class="uk-position-cover" href="{{ post.url | relative_url }}"></a>
+          <h3 class="uk-card-title uk-margin-remove uk-text-primary">{{ post.title | escape }}</h3>
+          <p class="uk-margin-small-top">Intrinsicly maximize unique infomediaries without an expanded array of mindshare. Credibly disseminate 
+            resource sucking customer service through functionalized schemas.</p>
+          <div class="uk-article-meta uk-flex uk-flex-middle">
+            {% if post.author %}
+              {% assign author = site.authors[post.author] %}
+            {% else %}
+              {% assign author = site.author %}
+            {% endif %}
+            {% if author.avatar %}
+              {% if author.avatar contains 'http' %}
+                  {% assign domain = '' %}
+              {% else %}
+                  {% assign domain = site.uploads | absolute_url %}
+              {% endif %}
+              <img class="uk-border-circle uk-avatar-small" data-src="{{ domain }}{{ author.avatar }}" src="{{ domain }}{{ author.avatar }}" alt="{{ author.name }}" data-uk-img>
+            {% endif %}
+            <div>
+              {% if author.name %}
+                {{ site.data.translation[site.lang].written_by | default: "Written by" }} {{ author.name }}<br>
+              {% endif %}
+              <time datetime="{{ post.date | date_to_xmlschema }}">
+                {% assign date_format = site.date_format | default: "%b %-d, %Y" %}
+                {{ post.date | date: date_format }}
+              </time>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% if paginator.total_pages > 1 %}
+      <div class="uk-text-center uk-margin-medium-top">
+        <ul class="uk-pagination uk-flex-center">
+          {% if paginator.previous_page %}
+            <li><a class="hvr-back uk-text-primary" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; {{ site.data.translation[site.lang].previous | default: "Previous" }}</a></li>
+          {% endif %}
+          {% if paginator.next_page %}
+            <li class="uk-margin-medium-left"><a class="hvr-forward uk-text-primary" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ site.data.translation[site.lang].next | default: "Next" }} &rarr;</a></li>
+          {% endif %}
+        </ul>      
+      </div>    
+    {% endif %}
+  </div>
+</div>

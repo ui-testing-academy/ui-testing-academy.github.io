@@ -1,0 +1,12 @@
+### Jekyll ###
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadat
+Gemfile.lock
+vendor
+
+### Gulp ###
+package.json
+/node_modules/
+

@@ -1,0 +1,41 @@
+# Categories separated in sections
+- title: General information
+  subtitle:
+  category: general
+  categories:
+
+    - permalink: /general/types-of-ui-tests/
+      title: Types of UI tests
+      desc: Description for "Types of UI tests"
+      icon: cog
+
+    - permalink: /general/naming/
+      title: Naming
+      desc: Description for "Naming"
+      icon: cog
+
+    - permalink: /general/dsl/
+      title: Domain Specific Language
+      desc: Description for "Domain Specific Language (DSL)"
+      icon: cog
+
+    - permalink: /general/best-practices/
+      title: Best Practices
+      desc: Description for "Best Practices"
+      icon: cog
+
+    - permalink: /general/common-mistakes/
+      title: Common Mistakes
+      desc: Description for "Common Mistakes"
+      icon: cog
+
+- title: Platforms
+  subtitle:
+  category: platform
+  categories:
+
+    - permalink: /platform/android/
+      title: Android
+      desc: Description for "Android"
+      icon: cog
+
