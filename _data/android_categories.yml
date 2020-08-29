@@ -18,6 +18,11 @@
       title: (WIP) ADB commands
       desc: ...
       icon: settings
+
+    - permalink: /platform/android/best-practices/
+      title: (WIP) Best practices
+      desc: ...
+      icon: settings
       
 - title: Frameworks
   subtitle:
@@ -98,18 +103,3 @@
       title: (WIP) Building DSL for Android testing
       desc: ...
       icon: file-tex
-
-- title: Best Practices
-  subtitle:
-  category: best-practices
-  categories:
-
-    - permalink: /platform/android/best-practices/best-practice-1/
-      title: (WIP) Best Practice 1
-      desc: ...
-      icon: cog
-
-    - permalink: /platform/android/best-practices/best-practice-2/
-      title: (WIP) Best Practice 2
-      desc: ...
-      icon: cog
