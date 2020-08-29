@@ -1,7 +1,7 @@
 ---
 title: Android - DSL - What is DSL - 1
 subtitle: Subtitle for "Android - DSL - What is DSL - 1"
-categories: [platform, android, dsl, what-is-dsl]
+categories: [platform, android, specific, dsl]
 author: alex
 ---
 

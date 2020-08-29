@@ -28,6 +28,11 @@
       title: Tools
       desc: ...
       icon: settings
+
+    - permalink: /platform/android/specific/dsl/
+      title: Domain Specific Language (DSL)
+      desc: ...
+      icon: settings
       
 - title: Frameworks
   subtitle:
@@ -78,18 +83,3 @@
       title: (WIP) Jetpack Compose testing
       desc: 
       icon: code
-
-- title: Domain Specific Language (DSL)
-  subtitle:
-  category: dsl
-  categories:
-
-    - permalink: /platform/android/dsl/what-is-dsl/
-      title: (WIP) What is Domain Specific Language (DSL)?
-      desc: ...
-      icon: cog
-
-    - permalink: /platform/android/dsl/building-dsl-for-android/
-      title: (WIP) Building DSL for Android testing
-      desc: ...
-      icon: file-tex

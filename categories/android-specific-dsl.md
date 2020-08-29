@@ -1,6 +1,6 @@
 ---
 layout: category
-permalink: /platform/android/dsl/building-dsl-for-android/
+permalink: /platform/android/specific/dsl/
 pagination: 
   enabled: true
   permalink: /:num/
@@ -8,8 +8,8 @@ pagination:
     values:
       - platform
       - android
+      - specific
       - dsl
-      - building-dsl-for-android
     matching: all
 ---
 

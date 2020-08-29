@@ -1,7 +1,7 @@
 ---
 title: Android - DSL - Building DSL for Android - 1
 subtitle: Subtitle for "Android - DSL - Building DSL for Android - 1"
-categories: [platform, android, dsl, building-dsl-for-android]
+categories: [platform, android, specific, dsl]
 author: alex
 ---
 
