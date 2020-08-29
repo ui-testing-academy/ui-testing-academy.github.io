@@ -113,23 +113,3 @@
       title: (WIP) Best Practice 2
       desc: ...
       icon: cog
-
-- title: Common Mistakes
-  subtitle:
-  category: common-mistake
-  categories:
-
-    - permalink: /platform/android/common-mistake/issue-1/
-      title: (WIP) Commin mistake 1
-      desc: ...
-      icon: cog
-
-    - permalink: /platform/android/common-mistake/issue-2/
-      title: (WIP) Commin mistake 2
-      desc: ...
-      icon: cog
-
-    - permalink: /platform/android/common-mistake/issue-3/
-      title: (WIP) Commin mistake 3
-      desc: ...
-      icon: cog
