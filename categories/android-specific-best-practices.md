@@ -1,6 +1,6 @@
 ---
 layout: category
-permalink: /platform/android/best-practices/
+permalink: /platform/android/specific/best-practices/
 pagination: 
   enabled: true
   permalink: /:num/
@@ -8,6 +8,7 @@ pagination:
     values:
       - platform
       - android
+      - specific
       - best-practices
     matching: all
 ---

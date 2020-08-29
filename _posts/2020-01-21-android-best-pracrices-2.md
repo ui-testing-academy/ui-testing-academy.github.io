@@ -1,7 +1,7 @@
 ---
 title: Android - Best Pracrice - 2
 subtitle: Subtitle for "Android - Best Pracrice - 2"
-categories: [platform, android, best-practices]
+categories: [platform, android, specific, best-practices]
 author: alex
 ---
 
