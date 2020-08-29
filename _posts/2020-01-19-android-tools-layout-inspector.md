@@ -1,7 +1,7 @@
 ---
 title: Android - Tools - Layout Inspector - 1
 subtitle: Subtitle for "Android - Tools - Layout Inspector - 1"
-categories: [platform, android, tools, layout-inspector]
+categories: [platform, android, specific, tools]
 author: alex
 ---
 

@@ -23,6 +23,11 @@
       title: (WIP) Best practices
       desc: ...
       icon: settings
+
+    - permalink: /platform/android/specific/tools/
+      title: Tools
+      desc: ...
+      icon: settings
       
 - title: Frameworks
   subtitle:
@@ -73,21 +78,6 @@
       title: (WIP) Jetpack Compose testing
       desc: 
       icon: code
-
-- title: Tools
-  subtitle:
-  category: tools
-  categories:
-
-    - permalink: /platform/android/tools/uiautomator-viewer/
-      title: (WIP) UI Automator Viewer
-      desc: ...
-      icon: cog
-
-    - permalink: /platform/android/tools/layout-inspector/
-      title: (WIP) Layout Inspector
-      desc: ...
-      icon: file-tex
 
 - title: Domain Specific Language (DSL)
   subtitle:

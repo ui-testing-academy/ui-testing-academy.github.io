@@ -1,7 +1,7 @@
 ---
 title: Android - Tools - UIAutomator Viewer - 1
 subtitle: Subtitle for "Android - Tools - UIAutomator Viewer - 1"
-categories: [platform, android, tools, uiautomator-viewer]
+categories: [platform, android, specific, tools]
 author: alex
 ---
 
