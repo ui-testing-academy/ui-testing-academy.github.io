@@ -1,6 +1,6 @@
 ---
-title: Best Pracrices - 1
-subtitle: Subtitle for "Best Pracrices - 1"
+title: '[WIP] Do not fully rely on test automation'
+subtitle: 'Subtitle for "[WIP] Do not fully rely on test automation"'
 categories: [general, best-practices]
 author: alex
 ---

@@ -1,7 +1,7 @@
 ---
-title: Types of UI tests - 2
-subtitle: Subtitle for "Types of UI tests - 2"
-categories: [general, types-of-ui-tests]
+title: '[WIP] What is Domain Specific Language?'
+subtitle: 'Subtitle for "[WIP] What is Domain Specific Language?"'
+categories: [general, dsl]
 author: alex
 ---
 

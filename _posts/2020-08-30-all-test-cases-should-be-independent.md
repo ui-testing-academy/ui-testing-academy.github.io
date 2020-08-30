@@ -1,7 +1,7 @@
 ---
-title: Naming - 1
-subtitle: Subtitle for "Naming - 1"
-categories: [general, naming]
+title: '[WIP] All test cases should be independent'
+subtitle: 'Subtitle for "[WIP] All test cases should be independent"'
+categories: [general, best-practices]
 author: alex
 ---
 

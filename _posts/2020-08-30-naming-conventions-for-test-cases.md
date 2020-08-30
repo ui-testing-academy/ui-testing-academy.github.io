@@ -1,6 +1,6 @@
 ---
-title: Naming - 2
-subtitle: Subtitle for "Naming - 2"
+title: '[WIP] Naming conventions for test cases'
+subtitle: '[WIP] Naming conventions for test cases'
 categories: [general, naming]
 author: alex
 ---

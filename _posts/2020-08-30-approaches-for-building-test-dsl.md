@@ -1,6 +1,6 @@
 ---
-title: DSL - 2
-subtitle: Subtitle for "DSL - 2"
+title: '[WIP] Approaches for building DSL for UI tests'
+subtitle: 'Subtitle for "[WIP] Approaches for building DSL for UI tests"'
 categories: [general, dsl]
 author: alex
 ---

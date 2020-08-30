@@ -1,7 +1,7 @@
 ---
-title: DSL - 1
-subtitle: Subtitle for "DSL - 1"
-categories: [general, dsl]
+title: '[WIP] Seperate your code from test automation framework'
+subtitle: 'Subtitle for "[WIP] Seperate your code from test automation framework"'
+categories: [general, best-practices]
 author: alex
 ---
 
