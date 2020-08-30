@@ -7,30 +7,30 @@
     - permalink: /general/types-of-ui-tests/
       title: Types of UI tests
       desc: Description for "Types of UI tests"
-      icon: cog
+      icon: file-text
 
     - permalink: /general/naming/
       title: Naming
       desc: Description for "Naming"
-      icon: cog
+      icon: bold
 
     - permalink: /general/dsl/
       title: Domain Specific Language
       desc: Description for "Domain Specific Language (DSL)"
-      icon: cog
+      icon: album
 
     - permalink: /general/best-practices/
       title: Best Practices
       desc: Description for "Best Practices"
-      icon: cog
+      icon: star
 
-- title: Platforms
-  subtitle:
-  category: platform
-  categories:
+# - title: Platforms
+#   subtitle:
+#   category: platform
+#   categories:
 
-    - permalink: /platform/android/
-      title: Android
-      desc: Description for "Android"
-      icon: cog
+#     - permalink: /platform/android/
+#       title: Android
+#       desc: Description for "Android"
+#       icon: cog
 
