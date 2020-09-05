@@ -19,7 +19,7 @@ permalink:          /:categories/:title/
 url:                ""
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
-logo:               
+logo: logo.svg    
   
 # Default author settings
 author:
@@ -57,14 +57,14 @@ share:
     facebook:       true # Enable by setting true (Facebook handle not required)
 
 header:
-  image: https://via.placeholder.com/1728x600
+  image: header.jpg
   # background: "rgba(0, 0, 0, 0.5)"
   color: light
   search: true
 
 # Default footer image settings
 footer:
-    copyright:      Made by Alex.
+    copyright:      Made by Alex Zhukovich.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
 disqus:
