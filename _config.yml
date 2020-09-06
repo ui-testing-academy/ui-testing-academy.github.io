@@ -24,15 +24,25 @@ logo: logo.svg
 # Default author settings
 author:
     name:           Alex Zhukovich
-    title:          Android Developer  
-    avatar:         https://avatars2.githubusercontent.com/u/7384058?s=460&u=93a21e841cb6ca15afb5181992a7aad8481a3c60&v=4
+    title:          Android Engineer  
+    avatar:         avatar/alex_zhukovich.png
 
 # Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
 authors:
     alex_zhukovich:
       name:         Alex Zhukovich
-      title:        Android Developer     
-      avatar:       https://avatars2.githubusercontent.com/u/7384058?s=460&u=93a21e841cb6ca15afb5181992a7aad8481a3c60&v=4
+      title:        Android Engineer     
+      avatar:       avatar/alex_zhukovich.png
+    
+    robert_konarskis:
+      name:         Robert Konarskis
+      title:        Android Engineer
+      avatar:       avatar/robert_konarskis.png
+
+    jonatas_josue_kirsch:
+      name:         Robert Konarskis
+      title:        QA Automation Engineer
+      avatar:       avatar/jonatas_josue_kirsch.png
 
 # Social icons displayed in footer
 social:
