@@ -4,9 +4,9 @@
   category: general
   categories:
 
-    - permalink: /general/types-of-ui-tests/
-      title: Types of UI tests
-      desc: Description for "Types of UI tests"
+    - permalink: /general/ui-testing/
+      title: UI testing
+      desc: Description for "UI testing"
       icon: file-text
 
     - permalink: /general/naming/
@@ -14,14 +14,14 @@
       desc: Description for "Naming"
       icon: bold
 
-    - permalink: /general/dsl/
-      title: Domain Specific Language
-      desc: Description for "Domain Specific Language (DSL)"
-      icon: album
+#    - permalink: /general/dsl/
+#      title: Domain Specific Language
+#      desc: Description for "Domain Specific Language (DSL)"
+#      icon: album
 
-    - permalink: /general/best-practices/
-      title: Best Practices
-      desc: Description for "Best Practices"
+    - permalink: /general/good-practices/
+      title: Good Practices
+      desc: Description for "Good Practices"
       icon: star
 
 # - title: Platforms

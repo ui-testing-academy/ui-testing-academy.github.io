@@ -1,13 +1,13 @@
 ---
 layout: category
-permalink: /general/types-of-ui-tests/
+permalink: /general/good-practices/
 pagination: 
   enabled: true
   permalink: /:num/
   categories:
     values:
       - general
-      - types-of-ui-tests
+      - good-practices
     matching: all
 ---
 

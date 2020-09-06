@@ -1,7 +1,7 @@
 ---
 title: '[WIP] Overview: Types of UI tests'
 subtitle: 'Subtitle for "[WIP] Overview: Types of UI tests"'
-categories: [general, types-of-ui-tests]
+categories: [general, ui-testing]
 author: alex
 ---
 

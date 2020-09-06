@@ -1,13 +1,13 @@
 ---
 layout: category
-permalink: /general/best-practices/
+permalink: /general/ui-testing/
 pagination: 
   enabled: true
   permalink: /:num/
   categories:
     values:
       - general
-      - best-practices
+      - ui-testing
     matching: all
 ---
 

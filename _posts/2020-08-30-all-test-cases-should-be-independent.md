@@ -1,7 +1,7 @@
 ---
 title: '[WIP] All test cases should be independent'
 subtitle: 'Subtitle for "[WIP] All test cases should be independent"'
-categories: [general, best-practices]
+categories: [general, good-practices]
 author: alex
 ---
 
