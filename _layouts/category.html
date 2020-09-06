@@ -33,8 +33,7 @@ layout: default
         <div class="uk-card uk-card-category uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded uk-width-1-1">
           <a class="uk-position-cover" href="{{ post.url | relative_url }}"></a>
           <h3 class="uk-card-title uk-margin-remove uk-text-primary">{{ post.title | escape }}</h3>
-          <p class="uk-margin-small-top">Intrinsicly maximize unique infomediaries without an expanded array of mindshare. Credibly disseminate 
-            resource sucking customer service through functionalized schemas.</p>
+          <p class="uk-margin-small-top">{{ post.description }}</p>
           <div class="uk-article-meta uk-flex uk-flex-middle">
             {% if post.author %}
               {% assign author = site.authors[post.author] %}

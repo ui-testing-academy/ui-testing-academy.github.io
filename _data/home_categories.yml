@@ -6,12 +6,12 @@
 
     - permalink: /general/ui-testing/
       title: UI testing
-      desc: Description for "UI testing"
+      desc: General topics connected with UI testing
       icon: file-text
 
     - permalink: /general/naming/
       title: Naming
-      desc: Description for "Naming"
+      desc: Naming conventions for test cases
       icon: bold
 
 #    - permalink: /general/dsl/
@@ -21,7 +21,7 @@
 
     - permalink: /general/good-practices/
       title: Good Practices
-      desc: Description for "Good Practices"
+      desc: Good practices which can be applied to UI testing
       icon: star
 
 # - title: Platforms
