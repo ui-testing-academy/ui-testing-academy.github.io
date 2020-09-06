@@ -16,7 +16,7 @@ baseurl:            ""
 permalink:          /:categories/:title/
 
 # Site base hostname & protocol, e.g. http://example.com
-url:                ""
+url:                "https://alexzhukovich.github.io/ui-testing.academy/"
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
 logo: logo.svg    
@@ -25,7 +25,7 @@ logo: logo.svg
 author:
     name:           Alex Zhukovich
     title:          Android Developer  
-    avatar:         https://via.placeholder.com/80x80
+    avatar:         https://avatars2.githubusercontent.com/u/7384058?s=460&u=93a21e841cb6ca15afb5181992a7aad8481a3c60&v=4
 
 # Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
 authors:
