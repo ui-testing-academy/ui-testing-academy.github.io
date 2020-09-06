@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Begin Jekyll SEO tag v2.6.1 -->
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
 <title>Naming conventions for test cases | UI Testing Academy</title>
-<meta name="generator" content="Jekyll v3.8.0" />
+<meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Naming conventions for test cases" />
 <meta name="author" content="alex_zhukovich" />
 <meta property="og:locale" content="en" />
@@ -19,7 +19,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-09-06T00:00:00+00:00" />
 <script type="application/ld+json">
-{"headline":"Naming conventions for test cases","dateModified":"2020-09-06T00:00:00+00:00","datePublished":"2020-09-06T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/general/naming/naming-conventions-for-test-cases/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/logo.svg"},"name":"alex_zhukovich"},"author":{"@type":"Person","name":"alex_zhukovich"},"url":"/general/naming/naming-conventions-for-test-cases/","description":"We will explore different naming conventions for test cases.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"dateModified":"2020-09-06T00:00:00+00:00","datePublished":"2020-09-06T00:00:00+00:00","headline":"Naming conventions for test cases","mainEntityOfPage":{"@type":"WebPage","@id":"/general/naming/naming-conventions-for-test-cases/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/logo.svg"},"name":"alex_zhukovich"},"author":{"@type":"Person","name":"alex_zhukovich"},"url":"/general/naming/naming-conventions-for-test-cases/","description":"We will explore different naming conventions for test cases.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="/uploads/logo.svg"/>
@@ -274,43 +274,43 @@ function searchResults(form) {
 
 <p>Many naming conventions can be applied to test cases.</p>
 
-<p>Note: Some runtime environments allow you to use space <code class="highlighter-rouge">" "</code> as a separator inside test names; in other cases, one of the most popular options is <code class="highlighter-rouge">"_"</code>. Example: <code class="highlighter-rouge">should_showInvalidAuthenticationMessage_when_passwordIsInvalid</code> or <code class="highlighter-rouge">should show authentication message when password is invalid</code>.</p>
+<p>Note: Some runtime environments allow you to use space <code class="language-plaintext highlighter-rouge">" "</code> as a separator inside test names; in other cases, one of the most popular options is <code class="language-plaintext highlighter-rouge">"_"</code>. Example: <code class="language-plaintext highlighter-rouge">should_showInvalidAuthenticationMessage_when_passwordIsInvalid</code> or <code class="language-plaintext highlighter-rouge">should show authentication message when password is invalid</code>.</p>
 
 <p>Most used naming conventions for test cases:</p>
 <ul>
-  <li><code class="highlighter-rouge">[Feature which will be tested]</code>
+  <li><code class="language-plaintext highlighter-rouge">[Feature which will be tested]</code>
     <ul>
-      <li><code class="highlighter-rouge">success_to_paid_for_order</code></li>
-      <li><code class="highlighter-rouge">fail_to_login_if_account_is_invalid</code></li>
-      <li><code class="highlighter-rouge">fail_to_apply_invalid_voucher</code></li>
+      <li><code class="language-plaintext highlighter-rouge">success_to_paid_for_order</code></li>
+      <li><code class="language-plaintext highlighter-rouge">fail_to_login_if_account_is_invalid</code></li>
+      <li><code class="language-plaintext highlighter-rouge">fail_to_apply_invalid_voucher</code></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">[Action]_[State under test]_[Expected behavior]</code>
+  <li><code class="language-plaintext highlighter-rouge">[Action]_[State under test]_[Expected behavior]</code>
     <ul>
-      <li><code class="highlighter-rouge">pay_validAccount_openSuccessScreen</code></li>
-      <li><code class="highlighter-rouge">login_invalidAccount_showInvalidUserMessage</code></li>
-      <li><code class="highlighter-rouge">addVoucher_invalidVoucher_showInvalidVoucherMessage</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pay_validAccount_openSuccessScreen</code></li>
+      <li><code class="language-plaintext highlighter-rouge">login_invalidAccount_showInvalidUserMessage</code></li>
+      <li><code class="language-plaintext highlighter-rouge">addVoucher_invalidVoucher_showInvalidVoucherMessage</code></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">[Action]_[Expected behavior]_[State under test]</code>
+  <li><code class="language-plaintext highlighter-rouge">[Action]_[Expected behavior]_[State under test]</code>
     <ul>
-      <li><code class="highlighter-rouge">pay_openSuccessScreen_when_AccountIsValid</code></li>
-      <li><code class="highlighter-rouge">login_showInvalidUserMessage_when_AccountIsInvalid</code></li>
-      <li><code class="highlighter-rouge">addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid</code></li>
+      <li><code class="language-plaintext highlighter-rouge">pay_openSuccessScreen_when_AccountIsValid</code></li>
+      <li><code class="language-plaintext highlighter-rouge">login_showInvalidUserMessage_when_AccountIsInvalid</code></li>
+      <li><code class="language-plaintext highlighter-rouge">addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid</code></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">Should_[Expected behavior]_When_[State under test]</code>
+  <li><code class="language-plaintext highlighter-rouge">Should_[Expected behavior]_When_[State under test]</code>
     <ul>
-      <li><code class="highlighter-rouge">should_openSuccessScreen_when_userPayWithValidAccount</code></li>
-      <li><code class="highlighter-rouge">should_showInvalidUserMessage_when_loginWithInvalidAccount</code></li>
-      <li><code class="highlighter-rouge">should_showInvalidVoucherMessage_when_userAddInvalidVoucher</code></li>
+      <li><code class="language-plaintext highlighter-rouge">should_openSuccessScreen_when_userPayWithValidAccount</code></li>
+      <li><code class="language-plaintext highlighter-rouge">should_showInvalidUserMessage_when_loginWithInvalidAccount</code></li>
+      <li><code class="language-plaintext highlighter-rouge">should_showInvalidVoucherMessage_when_userAddInvalidVoucher</code></li>
     </ul>
   </li>
-  <li><code class="highlighter-rouge">Given_[Preconditions]_When_[State under test]_Then_[Expected behavior]</code>
+  <li><code class="language-plaintext highlighter-rouge">Given_[Preconditions]_When_[State under test]_Then_[Expected behavior]</code>
     <ul>
-      <li><code class="highlighter-rouge">given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen</code></li>
-      <li><code class="highlighter-rouge">given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage</code></li>
-      <li><code class="highlighter-rouge">given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage</code></li>
+      <li><code class="language-plaintext highlighter-rouge">given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen</code></li>
+      <li><code class="language-plaintext highlighter-rouge">given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage</code></li>
+      <li><code class="language-plaintext highlighter-rouge">given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage</code></li>
     </ul>
   </li>
 </ul>
