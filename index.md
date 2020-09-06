@@ -28,3 +28,11 @@ header:
   subtitle="Our team is just an email away ready to answer your questions" 
   section="default" 
 %}
+
+{% include cta.html 
+  title="Didn't find an answer?" 
+  button_text="Contact Us" 
+  button_url="/contact/" 
+  subtitle="Get in touch with us for more information about UI Testing" 
+  section="muted"
+%}
