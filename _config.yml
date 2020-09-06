@@ -10,13 +10,13 @@ description:        UI Testing related content
 lang:               en
 
 # Site subpath, e.g. /blog
-baseurl:            ""
+baseurl:            "ui-testing.academy"
 
 # Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
 permalink:          /:categories/:title/
 
 # Site base hostname & protocol, e.g. http://example.com
-url:                "https://alexzhukovich.github.io/ui-testing.academy/"
+url:                ""
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
 logo: logo.svg    
