@@ -4,7 +4,7 @@
       "title"    : "Naming conventions for test cases",
       "category" : "",
       "tags"     : "",
-      "url"      : "ui-testing.academy/general/naming/naming-conventions-for-test-cases/",
+      "url"      : "/general/naming/naming-conventions-for-test-cases/",
       "date"     : "2020-09-06 00:00:00 +0000"
     } ,
   
@@ -12,7 +12,7 @@
       "title"    : "Approaches of UI testing",
       "category" : "",
       "tags"     : "",
-      "url"      : "ui-testing.academy/general/ui-testing/approaches-of-ui-testing/",
+      "url"      : "/general/ui-testing/approaches-of-ui-testing/",
       "date"     : "2020-09-06 00:00:00 +0000"
     } ,
   
@@ -20,7 +20,7 @@
       "title"    : "All test cases should be independent",
       "category" : "",
       "tags"     : "",
-      "url"      : "ui-testing.academy/general/good-practices/all-test-cases-should-be-independent/",
+      "url"      : "/general/good-practices/all-test-cases-should-be-independent/",
       "date"     : "2020-09-06 00:00:00 +0000"
     } 
   
