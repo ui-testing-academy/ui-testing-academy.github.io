@@ -4,7 +4,7 @@ header:
   # image: header.jpg
   # background: "rgba(0, 0, 0, 0.5)"
   # color: light
-  title: How can we help you?
+  title: Here you learn more about UI testing
   subtitle:
   # search: true
 ---
