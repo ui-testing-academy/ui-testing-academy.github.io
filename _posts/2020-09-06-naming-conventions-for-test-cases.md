@@ -8,7 +8,12 @@ A name is an essential part of a test suite and each test scenario. When analyzi
 
 Many naming conventions can be applied to test cases.
 
-Note: Some runtime environments allow you to use space `" "` as a separator inside test names; in other cases, one of the most popular options is `"_"`. Example: `should_showInvalidAuthenticationMessage_when_passwordIsInvalid` or `should show authentication message when password is invalid`.
+Note: Some runtime environments allow you to use space `" "` as a separator inside test names; in other cases, one of the most popular options is `"_"`. Example:
+```
+should_showInvalidAuthenticationMessage_when_passwordIsInvalid
+// or
+should show authentication message when password is invalid
+```
 
 Most used naming conventions for test cases:
 ## Feature which will be tested
