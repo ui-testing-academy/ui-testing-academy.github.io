@@ -277,38 +277,41 @@ function searchResults(form) {
 <p>Note: Some runtime environments allow you to use space <code class="language-plaintext highlighter-rouge">" "</code> as a separator inside test names; in other cases, one of the most popular options is <code class="language-plaintext highlighter-rouge">"_"</code>. Example: <code class="language-plaintext highlighter-rouge">should_showInvalidAuthenticationMessage_when_passwordIsInvalid</code> or <code class="language-plaintext highlighter-rouge">should show authentication message when password is invalid</code>.</p>
 
 <p>Most used naming conventions for test cases:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">[Feature which will be tested]</code>
-```kotlin</li>
-  <li>success_to_paid_for_order</li>
-  <li>fail_to_login_if_account_is_invalid</li>
-  <li>fail_to_apply_invalid_voucher
-```</li>
-  <li><code class="language-plaintext highlighter-rouge">[Action]_[State under test]_[Expected behavior]</code>
-```kotlin</li>
-  <li>pay_validAccount_openSuccessScreen</li>
-  <li>login_invalidAccount_showInvalidUserMessage</li>
-  <li>addVoucher_invalidVoucher_showInvalidVoucherMessage
-```</li>
-  <li><code class="language-plaintext highlighter-rouge">[Action]_[Expected behavior]_[State under test]</code>
-```kotlin</li>
-  <li>pay_openSuccessScreen_when_AccountIsValid</li>
-  <li>login_showInvalidUserMessage_when_AccountIsInvalid</li>
-  <li>addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid
-```</li>
-  <li><code class="language-plaintext highlighter-rouge">Should_[Expected behavior]_When_[State under test]</code>
-```kotlin</li>
-  <li>should_openSuccessScreen_when_userPayWithValidAccount</li>
-  <li>should_showInvalidUserMessage_when_loginWithInvalidAccount</li>
-  <li>should_showInvalidVoucherMessage_when_userAddInvalidVoucher
-```</li>
-  <li><code class="language-plaintext highlighter-rouge">Given_[Preconditions]_When_[State under test]_Then_[Expected behavior]</code>
-```kotlin</li>
-  <li>given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen</li>
-  <li>given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage</li>
-  <li>given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage
-```</li>
-</ul>
+<h2 id="feature-which-will-be-tested">Feature which will be tested</h2>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">success_to_paid_for_order</span>
+
+<span class="n">fail_to_login_if_account_is_invalid</span>
+
+<span class="n">fail_to_apply_invalid_voucher</span>
+</code></pre></div></div>
+<h2 id="action-state-under-test-expected-behavior">[Action] [State under test] [Expected behavior]</h2>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pay_validAccount_openSuccessScreen</span>
+
+<span class="n">login_invalidAccount_showInvalidUserMessage</span>
+
+<span class="n">addVoucher_invalidVoucher_showInvalidVoucherMessage</span>
+</code></pre></div></div>
+<h2 id="action-expected-behavior-state-under-test">[Action] [Expected behavior] [State under test]</h2>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pay_openSuccessScreen_when_AccountIsValid</span>
+
+<span class="n">login_showInvalidUserMessage_when_AccountIsInvalid</span>
+
+<span class="n">addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid</span>
+</code></pre></div></div>
+<h2 id="should-expected-behavior-when-state-under-test">Should [Expected behavior] When [State under test]</h2>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">should_openSuccessScreen_when_userPayWithValidAccount</span>
+
+<span class="n">should_showInvalidUserMessage_when_loginWithInvalidAccount</span>
+
+<span class="n">should_showInvalidVoucherMessage_when_userAddInvalidVoucher</span>
+</code></pre></div></div>
+<h2 id="given-preconditions-when-state-under-test-then-expected-behavior">Given [Preconditions] When [State under test] Then [Expected behavior]</h2>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen</span>
+
+<span class="n">given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage</span>
+
+<span class="n">given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage</span>
+</code></pre></div></div>
 
             
               <div class="share uk-text-center uk-margin-large-top">
