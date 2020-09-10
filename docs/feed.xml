@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2020-09-09T18:56:56+00:00</updated><id>/feed.xml</id><title type="html">UI Testing Academy</title><subtitle>UI Testing related content</subtitle><author><name>Alex Zhukovich</name></author><entry><title type="html">All test cases should be independent</title><link href="/general/good-practices/all-test-cases-should-be-independent/" rel="alternate" type="text/html" title="All test cases should be independent" /><published>2020-09-06T00:00:00+00:00</published><updated>2020-09-06T00:00:00+00:00</updated><id>/general/good-practices/all-test-cases-should-be-independent</id><content type="html" xml:base="/general/good-practices/all-test-cases-should-be-independent/">&lt;p&gt;A test case checks that part of the application works according to requirements. When we have a situation where one test case depends on the other one, we may see unexpected behavior in some test cases because of the following reasons:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" hreflang="en" /><updated>2020-09-10T10:37:14+00:00</updated><id>/feed.xml</id><title type="html">UI Testing Academy</title><subtitle>UI Testing related content</subtitle><author><name>Alex Zhukovich</name></author><entry><title type="html">All test cases should be independent</title><link href="/general/good-practices/all-test-cases-should-be-independent/" rel="alternate" type="text/html" title="All test cases should be independent" /><published>2020-09-06T00:00:00+00:00</published><updated>2020-09-06T00:00:00+00:00</updated><id>/general/good-practices/all-test-cases-should-be-independent</id><content type="html" xml:base="/general/good-practices/all-test-cases-should-be-independent/">&lt;p&gt;A test case checks that part of the application works according to requirements. When we have a situation where one test case depends on the other one, we may see unexpected behavior in some test cases because of the following reasons:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;test cases may be executed in random sequence; in this case, some test cases could fail because of the incorrect initial state of the application or environment&lt;/li&gt;
   &lt;li&gt;failing one test could cause another test to fail too&lt;/li&gt;
@@ -102,38 +102,33 @@
 &lt;p&gt;Most used naming conventions for test cases:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[Feature which will be tested]&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;success_to_paid_for_order&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fail_to_login_if_account_is_invalid&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fail_to_apply_invalid_voucher&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+```kotlin&lt;/li&gt;
+  &lt;li&gt;success_to_paid_for_order&lt;/li&gt;
+  &lt;li&gt;fail_to_login_if_account_is_invalid&lt;/li&gt;
+  &lt;li&gt;fail_to_apply_invalid_voucher
+```&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[Action]_[State under test]_[Expected behavior]&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pay_validAccount_openSuccessScreen&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;login_invalidAccount_showInvalidUserMessage&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;addVoucher_invalidVoucher_showInvalidVoucherMessage&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+```kotlin&lt;/li&gt;
+  &lt;li&gt;pay_validAccount_openSuccessScreen&lt;/li&gt;
+  &lt;li&gt;login_invalidAccount_showInvalidUserMessage&lt;/li&gt;
+  &lt;li&gt;addVoucher_invalidVoucher_showInvalidVoucherMessage
+```&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[Action]_[Expected behavior]_[State under test]&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pay_openSuccessScreen_when_AccountIsValid&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;login_showInvalidUserMessage_when_AccountIsInvalid&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+```kotlin&lt;/li&gt;
+  &lt;li&gt;pay_openSuccessScreen_when_AccountIsValid&lt;/li&gt;
+  &lt;li&gt;login_showInvalidUserMessage_when_AccountIsInvalid&lt;/li&gt;
+  &lt;li&gt;addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid
+```&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Should_[Expected behavior]_When_[State under test]&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;should_openSuccessScreen_when_userPayWithValidAccount&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;should_showInvalidUserMessage_when_loginWithInvalidAccount&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;should_showInvalidVoucherMessage_when_userAddInvalidVoucher&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+```kotlin&lt;/li&gt;
+  &lt;li&gt;should_openSuccessScreen_when_userPayWithValidAccount&lt;/li&gt;
+  &lt;li&gt;should_showInvalidUserMessage_when_loginWithInvalidAccount&lt;/li&gt;
+  &lt;li&gt;should_showInvalidVoucherMessage_when_userAddInvalidVoucher
+```&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Given_[Preconditions]_When_[State under test]_Then_[Expected behavior]&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
+```kotlin&lt;/li&gt;
+  &lt;li&gt;given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen&lt;/li&gt;
+  &lt;li&gt;given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage&lt;/li&gt;
+  &lt;li&gt;given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage
+```&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>alex_zhukovich</name></author><summary type="html">A name is an essential part of a test suite and each test scenario. When analyzing test reports, all you see are the names of the test cases. The right name of the test case provides information about the scenario, and often, it’s enough information for understanding the main idea.</summary></entry></feed>

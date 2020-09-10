@@ -279,40 +279,35 @@ function searchResults(form) {
 <p>Most used naming conventions for test cases:</p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">[Feature which will be tested]</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">success_to_paid_for_order</code></li>
-      <li><code class="language-plaintext highlighter-rouge">fail_to_login_if_account_is_invalid</code></li>
-      <li><code class="language-plaintext highlighter-rouge">fail_to_apply_invalid_voucher</code></li>
-    </ul>
-  </li>
+```kotlin</li>
+  <li>success_to_paid_for_order</li>
+  <li>fail_to_login_if_account_is_invalid</li>
+  <li>fail_to_apply_invalid_voucher
+```</li>
   <li><code class="language-plaintext highlighter-rouge">[Action]_[State under test]_[Expected behavior]</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">pay_validAccount_openSuccessScreen</code></li>
-      <li><code class="language-plaintext highlighter-rouge">login_invalidAccount_showInvalidUserMessage</code></li>
-      <li><code class="language-plaintext highlighter-rouge">addVoucher_invalidVoucher_showInvalidVoucherMessage</code></li>
-    </ul>
-  </li>
+```kotlin</li>
+  <li>pay_validAccount_openSuccessScreen</li>
+  <li>login_invalidAccount_showInvalidUserMessage</li>
+  <li>addVoucher_invalidVoucher_showInvalidVoucherMessage
+```</li>
   <li><code class="language-plaintext highlighter-rouge">[Action]_[Expected behavior]_[State under test]</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">pay_openSuccessScreen_when_AccountIsValid</code></li>
-      <li><code class="language-plaintext highlighter-rouge">login_showInvalidUserMessage_when_AccountIsInvalid</code></li>
-      <li><code class="language-plaintext highlighter-rouge">addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid</code></li>
-    </ul>
-  </li>
+```kotlin</li>
+  <li>pay_openSuccessScreen_when_AccountIsValid</li>
+  <li>login_showInvalidUserMessage_when_AccountIsInvalid</li>
+  <li>addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid
+```</li>
   <li><code class="language-plaintext highlighter-rouge">Should_[Expected behavior]_When_[State under test]</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">should_openSuccessScreen_when_userPayWithValidAccount</code></li>
-      <li><code class="language-plaintext highlighter-rouge">should_showInvalidUserMessage_when_loginWithInvalidAccount</code></li>
-      <li><code class="language-plaintext highlighter-rouge">should_showInvalidVoucherMessage_when_userAddInvalidVoucher</code></li>
-    </ul>
-  </li>
+```kotlin</li>
+  <li>should_openSuccessScreen_when_userPayWithValidAccount</li>
+  <li>should_showInvalidUserMessage_when_loginWithInvalidAccount</li>
+  <li>should_showInvalidVoucherMessage_when_userAddInvalidVoucher
+```</li>
   <li><code class="language-plaintext highlighter-rouge">Given_[Preconditions]_When_[State under test]_Then_[Expected behavior]</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen</code></li>
-      <li><code class="language-plaintext highlighter-rouge">given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage</code></li>
-      <li><code class="language-plaintext highlighter-rouge">given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage</code></li>
-    </ul>
-  </li>
+```kotlin</li>
+  <li>given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen</li>
+  <li>given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage</li>
+  <li>given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage
+```</li>
 </ul>
 
             
