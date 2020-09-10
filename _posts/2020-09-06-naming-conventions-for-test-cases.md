@@ -11,33 +11,43 @@ Many naming conventions can be applied to test cases.
 Note: Some runtime environments allow you to use space `" "` as a separator inside test names; in other cases, one of the most popular options is `"_"`. Example: `should_showInvalidAuthenticationMessage_when_passwordIsInvalid` or `should show authentication message when password is invalid`.
 
 Most used naming conventions for test cases:
-* ```[Feature which will be tested]```
+## Feature which will be tested
 ```kotlin
-- success_to_paid_for_order
-- fail_to_login_if_account_is_invalid
-- fail_to_apply_invalid_voucher
+success_to_paid_for_order
+
+fail_to_login_if_account_is_invalid
+
+fail_to_apply_invalid_voucher
 ```
-* ```[Action]_[State under test]_[Expected behavior]```
+## [Action] [State under test] [Expected behavior]
 ```kotlin
-- pay_validAccount_openSuccessScreen
-- login_invalidAccount_showInvalidUserMessage
-- addVoucher_invalidVoucher_showInvalidVoucherMessage
+pay_validAccount_openSuccessScreen
+
+login_invalidAccount_showInvalidUserMessage
+
+addVoucher_invalidVoucher_showInvalidVoucherMessage
+```  
+## [Action] [Expected behavior] [State under test]
+```kotlin
+pay_openSuccessScreen_when_AccountIsValid
+
+login_showInvalidUserMessage_when_AccountIsInvalid
+
+addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid
+```  
+## Should [Expected behavior] When [State under test]
+```kotlin
+should_openSuccessScreen_when_userPayWithValidAccount
+
+should_showInvalidUserMessage_when_loginWithInvalidAccount
+
+should_showInvalidVoucherMessage_when_userAddInvalidVoucher
 ```
-* ```[Action]_[Expected behavior]_[State under test]```
+## Given [Preconditions] When [State under test] Then [Expected behavior]
 ```kotlin
-- pay_openSuccessScreen_when_AccountIsValid
-- login_showInvalidUserMessage_when_AccountIsInvalid
-- addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid
-```  
-* ```Should_[Expected behavior]_When_[State under test]```
-```kotlin
-- should_openSuccessScreen_when_userPayWithValidAccount
-- should_showInvalidUserMessage_when_loginWithInvalidAccount
-- should_showInvalidVoucherMessage_when_userAddInvalidVoucher
-```  
-* ```Given_[Preconditions]_When_[State under test]_Then_[Expected behavior]```
-```kotlin
-- given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen
-- given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage
-- given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage
+given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen
+
+given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage
+
+given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage
 ```  
