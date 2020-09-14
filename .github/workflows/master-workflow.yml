@@ -14,5 +14,5 @@ jobs:
         with:
           fetch-depth: 1
       - name: Build and Deploy
-        uses: victoriadrake/jekyll-cd@master
+        uses: victoriadrake/jekyll-cd@gh-pages
 
