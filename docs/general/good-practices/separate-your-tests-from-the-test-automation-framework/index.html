@@ -6,20 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Naming conventions for test cases | UI Testing Academy</title>
+<title>Separate your tests from the test automation framework | UI Testing Academy</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Naming conventions for test cases" />
+<meta property="og:title" content="Separate your tests from the test automation framework" />
 <meta name="author" content="alex_zhukovich" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="We will explore different naming conventions for test cases." />
-<meta property="og:description" content="We will explore different naming conventions for test cases." />
-<link rel="canonical" href="https://ui-testing.academy/general/naming/naming-conventions-for-test-cases/" />
-<meta property="og:url" content="https://ui-testing.academy/general/naming/naming-conventions-for-test-cases/" />
+<meta name="description" content="We will explore reasons for separating test cases from the test automation framework" />
+<meta property="og:description" content="We will explore reasons for separating test cases from the test automation framework" />
+<link rel="canonical" href="https://ui-testing.academy/general/good-practices/separate-your-tests-from-the-test-automation-framework/" />
+<meta property="og:url" content="https://ui-testing.academy/general/good-practices/separate-your-tests-from-the-test-automation-framework/" />
 <meta property="og:site_name" content="UI Testing Academy" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-09-06T00:00:00+00:00" />
+<meta property="article:published_time" content="2020-09-19T00:00:00+00:00" />
 <script type="application/ld+json">
-{"dateModified":"2020-09-06T00:00:00+00:00","datePublished":"2020-09-06T00:00:00+00:00","headline":"Naming conventions for test cases","mainEntityOfPage":{"@type":"WebPage","@id":"https://ui-testing.academy/general/naming/naming-conventions-for-test-cases/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ui-testing.academy/logo.svg"},"name":"alex_zhukovich"},"author":{"@type":"Person","name":"alex_zhukovich"},"url":"https://ui-testing.academy/general/naming/naming-conventions-for-test-cases/","description":"We will explore different naming conventions for test cases.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"dateModified":"2020-09-19T00:00:00+00:00","datePublished":"2020-09-19T00:00:00+00:00","headline":"Separate your tests from the test automation framework","mainEntityOfPage":{"@type":"WebPage","@id":"https://ui-testing.academy/general/good-practices/separate-your-tests-from-the-test-automation-framework/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ui-testing.academy/logo.svg"},"name":"alex_zhukovich"},"author":{"@type":"Person","name":"alex_zhukovich"},"url":"https://ui-testing.academy/general/good-practices/separate-your-tests-from-the-test-automation-framework/","description":"We will explore reasons for separating test cases from the test automation framework","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://ui-testing.academy/uploads/logo.svg"/>
@@ -233,6 +233,8 @@ function searchResults(form) {
         
       
         
+      
+        
           <ul class="uk-breadcrumb">
             <li><a href="/">Home</a></li>
             
@@ -241,15 +243,15 @@ function searchResults(form) {
             
             
             
-            <li><a href="/general/naming/">Naming</a></li>
-            <li><span>Naming conventions for test cases</span></li>
+            <li><a href="/general/good-practices/">Good Practices</a></li>
+            <li><span>Separate your tests from the test automation framework</span></li>
           </ul>
           
     
     <div class="uk-background-default uk-border-rounded uk-box-shadow-small">
       <div class="uk-container uk-container-xsmall uk-padding-large">
         <article class="uk-article">
-          <h1 class="uk-article-title">Naming conventions for test cases</h1>
+          <h1 class="uk-article-title">Separate your tests from the test automation framework</h1>
           <div class="uk-article-meta uk-margin uk-flex uk-flex-middle">
             
 
@@ -262,68 +264,91 @@ function searchResults(form) {
   
     Written by Alex Zhukovich<br>
   
-  <time datetime="2020-09-06T00:00:00+00:00">
+  <time datetime="2020-09-19T00:00:00+00:00">
     
-    Sep 6, 2020
+    Sep 19, 2020
   </time>
 </div>
           </div>
           
           <div class="uk-article-content">
-            <p>A name is an essential part of a test suite and each test scenario. When analyzing test reports, all you see are the names of the test cases. The right name of the test case provides information about the scenario, and often, it’s enough information for understanding the main idea.</p>
+            <p>The testing framework has a significant impact on the test cases in a project because each framework has its own approach for handling similar situations and issues. Even if you are happy with the framework, chances are that you will change it in the future.</p>
 
-<p>Many naming conventions can be applied to test cases.</p>
+<p>One of the main problems of migration from one framework to another is updating many test cases. When the project is big, you may face yourself adjusting many tests, and this may be time-consuming. The solution for the issue is to introduce abstraction and separate test cases from the testing framework.</p>
 
-<p>Note: Some runtime environments allow you to use space <code class="language-plaintext highlighter-rouge">" "</code> as a separator inside test names; in other cases, one of the most popular options is <code class="language-plaintext highlighter-rouge">"_"</code>. Example:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>should_showInvalidAuthenticationMessage_when_passwordIsInvalid
-// or
-should show authentication message when password is invalid
+<p>Let’s take a look at an example of a test case with the Espresso framework, which does the following actions:</p>
+<ul>
+  <li>Enter email address</li>
+  <li>Enter empty password</li>
+  <li>Check that the “Password is blank” error message is displayed</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Test</span>
+<span class="k">fun</span> <span class="nf">shouldDisplayErrorWhenPasswordIsBlank</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">val</span> <span class="py">email</span> <span class="p">=</span> <span class="s">"test-account@alexzh.com"</span>
+   <span class="kd">val</span> <span class="py">password</span> <span class="p">=</span> <span class="s">""</span>
+
+   <span class="c1">// enter email</span>
+   <span class="nf">onView</span><span class="p">(</span><span class="nf">withId</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">emailEditText</span><span class="p">))</span>
+      <span class="p">.</span><span class="nf">perform</span><span class="p">(</span><span class="nf">replaceText</span><span class="p">(</span><span class="n">email</span><span class="p">))</span>
+
+   <span class="c1">// enter password</span>
+   <span class="nf">onView</span><span class="p">(</span><span class="nf">withId</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">passwordEditText</span><span class="p">))</span>
+      <span class="p">.</span><span class="nf">perform</span><span class="p">(</span><span class="nf">replaceText</span><span class="p">(</span><span class="n">password</span><span class="p">))</span>
+
+   <span class="c1">// press login button</span>
+   <span class="nf">onView</span><span class="p">(</span><span class="nf">withId</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">loginButton</span><span class="p">))</span>
+      <span class="p">.</span><span class="nf">perform</span><span class="p">(</span><span class="nf">click</span><span class="p">())</span>
+
+   <span class="c1">// verification of error message</span>
+   <span class="nf">onView</span><span class="p">(</span><span class="nf">withText</span><span class="p">(</span><span class="s">"Password is blank"</span><span class="p">))</span>
+      <span class="p">.</span><span class="nf">check</span><span class="p">(</span><span class="nf">matches</span><span class="p">(</span><span class="nf">isDisplayed</span><span class="p">()))</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>Most used naming conventions for test cases:</p>
-<h2 id="feature-which-will-be-tested">Feature which will be tested</h2>
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">success_to_paid_for_order</span>
+<p>So, let’s try to make the code of the test case framework-independent by extracting base operations (enter text, click on the view, etc.) to functions:</p>
 
-<span class="n">fail_to_login_if_account_is_invalid</span>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">enterText</span><span class="p">(</span><span class="n">viewId</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">onView</span><span class="p">(</span><span class="nf">withId</span><span class="p">(</span><span class="n">viewId</span><span class="p">))</span>
+      <span class="p">.</span><span class="nf">perform</span><span class="p">(</span><span class="nf">replaceText</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="p">}</span>
 
-<span class="n">fail_to_apply_invalid_voucher</span>
+<span class="k">fun</span> <span class="nf">clickOnView</span><span class="p">(</span><span class="n">viewId</span><span class="p">:</span> <span class="nc">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">onView</span><span class="p">(</span><span class="nf">withId</span><span class="p">(</span><span class="n">viewId</span><span class="p">))</span>
+      <span class="p">.</span><span class="nf">perform</span><span class="p">(</span><span class="nf">click</span><span class="p">())</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">hasText</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">onView</span><span class="p">(</span><span class="nf">withText</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+      <span class="p">.</span><span class="nf">check</span><span class="p">(</span><span class="nf">matches</span><span class="p">(</span><span class="nf">isDisplayed</span><span class="p">()))</span>
+<span class="p">}</span>
 </code></pre></div></div>
-<h2 id="action-state-under-test-expected-behavior">[Action] [State under test] [Expected behavior]</h2>
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pay_validAccount_openSuccessScreen</span>
 
-<span class="n">login_invalidAccount_showInvalidUserMessage</span>
+<p>After that, we can update our test case:</p>
 
-<span class="n">addVoucher_invalidVoucher_showInvalidVoucherMessage</span>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Test</span>
+<span class="k">fun</span> <span class="nf">shouldDisplayErrorWhenPasswordIsBlank</span><span class="p">()</span> <span class="p">{</span>
+   <span class="nf">enterText</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">emailEditText</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
+   <span class="nf">enterText</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">passwordEditText</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+   <span class="nf">clickOnView</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">loginButton</span><span class="p">)</span>
+   
+   <span class="nf">hasText</span><span class="p">(</span><span class="s">"Password is blank"</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></div></div>
-<h2 id="action-expected-behavior-state-under-test">[Action] [Expected behavior] [State under test]</h2>
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pay_openSuccessScreen_when_AccountIsValid</span>
 
-<span class="n">login_showInvalidUserMessage_when_AccountIsInvalid</span>
+<p><img src="/assets/images/separate-tests-from-test-automation-framework/framework-independence.svg" alt="image" /></p>
 
-<span class="n">addVoucher_showInvalidVoucherMessage_when_VoucherIsInvalid</span>
-</code></pre></div></div>
-<h2 id="should-expected-behavior-when-state-under-test">Should [Expected behavior] When [State under test]</h2>
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">should_openSuccessScreen_when_userPayWithValidAccount</span>
+<p>Note: We can apply more advanced techniques for separating test code from the testing framework, like the PageObject pattern.</p>
 
-<span class="n">should_showInvalidUserMessage_when_loginWithInvalidAccount</span>
-
-<span class="n">should_showInvalidVoucherMessage_when_userAddInvalidVoucher</span>
-</code></pre></div></div>
-<h2 id="given-preconditions-when-state-under-test-then-expected-behavior">Given [Preconditions] When [State under test] Then [Expected behavior]</h2>
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">given_userIsAuthenticated_when_accountNumberIsValidToPay_then_openSuccessScreen</span>
-
-<span class="n">given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage</span>
-
-<span class="n">given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage</span>
-</code></pre></div></div>
+<p>The additional abstraction level allows you to save a lot of time during switching one technology to another one because, in this case, we only need to update the framework-dependent layer, and the test cases will not be subject to changes.</p>
 
             
               <div class="share uk-text-center uk-margin-large-top">
     
-        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=Naming+conventions+for+test+cases&url=https://ui-testing.academy/general/naming/naming-conventions-for-test-cases/&via=ui_test_academy&related=ui_test_academy" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=Separate+your+tests+from+the+test+automation+framework&url=https://ui-testing.academy/general/good-practices/separate-your-tests-from-the-test-automation-framework/&via=ui_test_academy&related=ui_test_academy" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
     
     
-        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fui-testing.academy%2Fgeneral%2Fnaming%2Fnaming-conventions-for-test-cases%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fui-testing.academy%2Fgeneral%2Fgood-practices%2Fseparate-your-tests-from-the-test-automation-framework%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
     
 </div>
             
@@ -332,18 +357,13 @@ should show authentication message when password is invalid
   <div class="uk-child-width-expand@s uk-grid-large" data-uk-grid>
     <div>
       
-      <h4>Approaches of UI testing</h4>
+      <h4>Naming conventions for test cases</h4>
       <div><a class="uk-remove-underline hvr-back" 
-        href="/general/ui-testing/approaches-of-ui-testing/">&larr; Previous</a>
+        href="/general/naming/naming-conventions-for-test-cases/">&larr; Previous</a>
       </div>
       
     </div>
     <div class="uk-text-right">
-      
-      <h4>Separate your tests from the test automation framework</h4>
-      <div class="uk-text-right"><a class="uk-remove-underline hvr-forward"
-        href="/general/good-practices/separate-your-tests-from-the-test-automation-framework/">Next &rarr;</a>
-      </div>
       
     </div>
   </div>
@@ -391,6 +411,10 @@ should show authentication message when password is invalid
         
 
         
+            <li><a href="/general/good-practices/all-test-cases-should-be-independent/">All test cases should be independent</a></li>
+            
+            
+        
 
     
     </ul>
@@ -422,9 +446,9 @@ should show authentication message when password is invalid
         
           <li class=""><a href="/general/ui-testing/">UI testing</a></li>
         
-          <li class="uk-active"><a href="/general/naming/">Naming</a></li>
+          <li class=""><a href="/general/naming/">Naming</a></li>
         
-          <li class=""><a href="/general/good-practices/">Good Practices</a></li>
+          <li class="uk-active"><a href="/general/good-practices/">Good Practices</a></li>
         
         </ul>
         

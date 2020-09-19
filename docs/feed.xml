@@ -1,38 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://ui-testing.academy/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ui-testing.academy/" rel="alternate" type="text/html" hreflang="en" /><updated>2020-09-15T20:49:39+00:00</updated><id>https://ui-testing.academy/feed.xml</id><title type="html">UI Testing Academy</title><subtitle>UI Testing related content</subtitle><author><name>Alex Zhukovich</name></author><entry><title type="html">All test cases should be independent</title><link href="https://ui-testing.academy/general/good-practices/all-test-cases-should-be-independent/" rel="alternate" type="text/html" title="All test cases should be independent" /><published>2020-09-06T00:00:00+00:00</published><updated>2020-09-06T00:00:00+00:00</updated><id>https://ui-testing.academy/general/good-practices/all-test-cases-should-be-independent</id><content type="html" xml:base="https://ui-testing.academy/general/good-practices/all-test-cases-should-be-independent/">&lt;p&gt;A test case checks that part of the application works according to requirements. When we have a situation where one test case depends on the other one, we may see unexpected behavior in some test cases because of the following reasons:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://ui-testing.academy/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ui-testing.academy/" rel="alternate" type="text/html" hreflang="en" /><updated>2020-09-19T19:49:09+00:00</updated><id>https://ui-testing.academy/feed.xml</id><title type="html">UI Testing Academy</title><subtitle>UI Testing related content</subtitle><author><name>Alex Zhukovich</name></author><entry><title type="html">Separate your tests from the test automation framework</title><link href="https://ui-testing.academy/general/good-practices/separate-your-tests-from-the-test-automation-framework/" rel="alternate" type="text/html" title="Separate your tests from the test automation framework" /><published>2020-09-19T00:00:00+00:00</published><updated>2020-09-19T00:00:00+00:00</updated><id>https://ui-testing.academy/general/good-practices/separate-your-tests-from-the-test-automation-framework</id><content type="html" xml:base="https://ui-testing.academy/general/good-practices/separate-your-tests-from-the-test-automation-framework/">&lt;p&gt;The testing framework has a significant impact on the test cases in a project because each framework has its own approach for handling similar situations and issues. Even if you are happy with the framework, chances are that you will change it in the future.&lt;/p&gt;
+
+&lt;p&gt;One of the main problems of migration from one framework to another is updating many test cases. When the project is big, you may face yourself adjusting many tests, and this may be time-consuming. The solution for the issue is to introduce abstraction and separate test cases from the testing framework.&lt;/p&gt;
+
+&lt;p&gt;Let’s take a look at an example of a test case with the Espresso framework, which does the following actions:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;test cases may be executed in random sequence; in this case, some test cases could fail because of the incorrect initial state of the application or environment&lt;/li&gt;
-  &lt;li&gt;failing one test could cause another test to fail too&lt;/li&gt;
+  &lt;li&gt;Enter email address&lt;/li&gt;
+  &lt;li&gt;Enter empty password&lt;/li&gt;
+  &lt;li&gt;Check that the “Password is blank” error message is displayed&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Many testing frameworks have a way to execute methods before and after the test case. In the case of JUnit 5, we can annotate methods with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@BeforeEach&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@AfterEach&lt;/code&gt; methods.&lt;/p&gt;
+&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;shouldDisplayErrorWhenPasswordIsBlank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;test-account@alexzh.com&quot;&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;py&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
 
-&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SuperImportantTestSuite&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// enter email&lt;/span&gt;
+   &lt;span class=&quot;nf&quot;&gt;onView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;withId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emailEditText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;perform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replaceText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-   &lt;span class=&quot;nd&quot;&gt;@BeforeEach&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// set up data before each test case&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+   &lt;span class=&quot;c1&quot;&gt;// enter password&lt;/span&gt;
+   &lt;span class=&quot;nf&quot;&gt;onView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;withId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;passwordEditText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;perform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replaceText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
 
-   &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;importantTestCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// press login button&lt;/span&gt;
+   &lt;span class=&quot;nf&quot;&gt;onView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;withId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loginButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;perform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
 
-
-   &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;superImportantTestCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-   &lt;span class=&quot;nd&quot;&gt;@AfterEach&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tearDown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// clean up data after each test case&lt;/span&gt;
-      &lt;span class=&quot;nf&quot;&gt;clearDatabase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+   &lt;span class=&quot;c1&quot;&gt;// verification of error message&lt;/span&gt;
+   &lt;span class=&quot;nf&quot;&gt;onView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;withText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Password is blank&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;matches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isDisplayed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Using methods with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@BeforeEach&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@AfterEach&lt;/code&gt; annotations from JUnit 5, or similar functionalities from other frameworks we can make our test cases independent. So, we can clean up data before or after each test scenario. In this case, every test case will start from the same state. In this example, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;importantTestCase&lt;/code&gt; and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;superImportantTestCase&lt;/code&gt; will start with an empty database.&lt;/p&gt;</content><author><name>alex_zhukovich</name></author><summary type="html">A test case checks that part of the application works according to requirements. When we have a situation where one test case depends on the other one, we may see unexpected behavior in some test cases because of the following reasons: test cases may be executed in random sequence; in this case, some test cases could fail because of the incorrect initial state of the application or environment failing one test could cause another test to fail too</summary></entry><entry><title type="html">Approaches of UI testing</title><link href="https://ui-testing.academy/general/ui-testing/approaches-of-ui-testing/" rel="alternate" type="text/html" title="Approaches of UI testing" /><published>2020-09-06T00:00:00+00:00</published><updated>2020-09-06T00:00:00+00:00</updated><id>https://ui-testing.academy/general/ui-testing/approaches-of-ui-testing</id><content type="html" xml:base="https://ui-testing.academy/general/ui-testing/approaches-of-ui-testing/">&lt;p&gt;UI Testing can be done in the following ways:&lt;/p&gt;
+&lt;p&gt;So, let’s try to make the code of the test case framework-independent by extracting base operations (enter text, click on the view, etc.) to functions:&lt;/p&gt;
+
+&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;enterText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;onView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;withId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;perform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;replaceText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;clickOnView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;onView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;withId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;perform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;hasText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;onView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;withText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;check&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;matches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isDisplayed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After that, we can update our test case:&lt;/p&gt;
+
+&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;shouldDisplayErrorWhenPasswordIsBlank&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;nf&quot;&gt;enterText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;emailEditText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;nf&quot;&gt;enterText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;passwordEditText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;nf&quot;&gt;clickOnView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;loginButton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   
+   &lt;span class=&quot;nf&quot;&gt;hasText&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Password is blank&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/separate-tests-from-test-automation-framework/framework-independence.svg&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note: We can apply more advanced techniques for separating test code from the testing framework, like the PageObject pattern.&lt;/p&gt;
+
+&lt;p&gt;The additional abstraction level allows you to save a lot of time during switching one technology to another one because, in this case, we only need to update the framework-dependent layer, and the test cases will not be subject to changes.&lt;/p&gt;</content><author><name>alex_zhukovich</name></author><summary type="html">The testing framework has a significant impact on the test cases in a project because each framework has its own approach for handling similar situations and issues. Even if you are happy with the framework, chances are that you will change it in the future.</summary></entry><entry><title type="html">Approaches of UI testing</title><link href="https://ui-testing.academy/general/ui-testing/approaches-of-ui-testing/" rel="alternate" type="text/html" title="Approaches of UI testing" /><published>2020-09-06T00:00:00+00:00</published><updated>2020-09-06T00:00:00+00:00</updated><id>https://ui-testing.academy/general/ui-testing/approaches-of-ui-testing</id><content type="html" xml:base="https://ui-testing.academy/general/ui-testing/approaches-of-ui-testing/">&lt;p&gt;UI Testing can be done in the following ways:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Manual testing&lt;/li&gt;
   &lt;li&gt;Record and replay testing&lt;/li&gt;
@@ -138,4 +172,38 @@ should show authentication message when password is invalid
 &lt;span class=&quot;n&quot;&gt;given_userIsNotAuthenticated_when_invalidAccountToLogin_then_showInvalidVoucherMessage&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;given_userIsAuthenticated_when_addInvalidVoucher_then_showInvalidVoucherMessage&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>alex_zhukovich</name></author><summary type="html">A name is an essential part of a test suite and each test scenario. When analyzing test reports, all you see are the names of the test cases. The right name of the test case provides information about the scenario, and often, it’s enough information for understanding the main idea.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>alex_zhukovich</name></author><summary type="html">A name is an essential part of a test suite and each test scenario. When analyzing test reports, all you see are the names of the test cases. The right name of the test case provides information about the scenario, and often, it’s enough information for understanding the main idea.</summary></entry><entry><title type="html">All test cases should be independent</title><link href="https://ui-testing.academy/general/good-practices/all-test-cases-should-be-independent/" rel="alternate" type="text/html" title="All test cases should be independent" /><published>2020-09-06T00:00:00+00:00</published><updated>2020-09-06T00:00:00+00:00</updated><id>https://ui-testing.academy/general/good-practices/all-test-cases-should-be-independent</id><content type="html" xml:base="https://ui-testing.academy/general/good-practices/all-test-cases-should-be-independent/">&lt;p&gt;A test case checks that part of the application works according to requirements. When we have a situation where one test case depends on the other one, we may see unexpected behavior in some test cases because of the following reasons:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;test cases may be executed in random sequence; in this case, some test cases could fail because of the incorrect initial state of the application or environment&lt;/li&gt;
+  &lt;li&gt;failing one test could cause another test to fail too&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Many testing frameworks have a way to execute methods before and after the test case. In the case of JUnit 5, we can annotate methods with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@BeforeEach&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@AfterEach&lt;/code&gt; methods.&lt;/p&gt;
+
+&lt;div class=&quot;language-kotlin highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SuperImportantTestSuite&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+   &lt;span class=&quot;nd&quot;&gt;@BeforeEach&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// set up data before each test case&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+
+   &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;importantTestCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+
+   &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;superImportantTestCase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+   &lt;span class=&quot;nd&quot;&gt;@AfterEach&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;fun&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;tearDown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// clean up data after each test case&lt;/span&gt;
+      &lt;span class=&quot;nf&quot;&gt;clearDatabase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using methods with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@BeforeEach&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;@AfterEach&lt;/code&gt; annotations from JUnit 5, or similar functionalities from other frameworks we can make our test cases independent. So, we can clean up data before or after each test scenario. In this case, every test case will start from the same state. In this example, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;importantTestCase&lt;/code&gt; and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;superImportantTestCase&lt;/code&gt; will start with an empty database.&lt;/p&gt;</content><author><name>alex_zhukovich</name></author><summary type="html">A test case checks that part of the application works according to requirements. When we have a situation where one test case depends on the other one, we may see unexpected behavior in some test cases because of the following reasons: test cases may be executed in random sequence; in this case, some test cases could fail because of the incorrect initial state of the application or environment failing one test could cause another test to fail too</summary></entry></feed>
