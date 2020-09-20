@@ -14,7 +14,7 @@
 $breadcrumb-item-font-size:                          $global-small-font-size !default;
 $breadcrumb-item-color:                              $global-muted-color !default;
 $breadcrumb-item-hover-color:                        $global-color !default;
-$breadcrumb-item-hover-text-decoration:              none !default;
+$breadcrumb-item-hover-text-decoration:              underline;
 $breadcrumb-item-active-color:                       $global-color !default;
 
 $breadcrumb-divider:                                 "/" !default;
@@ -69,12 +69,6 @@ $breadcrumb-divider-color:                           $global-muted-color !defaul
 /* Disabled */
 .uk-breadcrumb > .uk-disabled > * {
     @if(mixin-exists(hook-breadcrumb-item-disabled)) {@include hook-breadcrumb-item-disabled();}
-}
-
-/* Active */
-.uk-breadcrumb > :last-child > * {
-    color: $breadcrumb-item-active-color;
-    @if(mixin-exists(hook-breadcrumb-item-active)) {@include hook-breadcrumb-item-active();}
 }
 
 /*
