@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Never use sleep in test code",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/general/good-practices/never-use-sleep-in-test-code/",
+      "date"     : "2020-09-20 00:00:00 +0000"
+    } ,
+  
+    {
       "title"    : "Separate your tests from the test automation framework",
       "category" : "",
       "tags"     : "",
