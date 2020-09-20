@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Separate your tests from the test automation framework",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/general/good-practices/separate-your-tests-from-the-test-automation-framework/",
+      "date"     : "2020-09-19 00:00:00 +0000"
+    } ,
+  
+    {
       "title"    : "Naming conventions for test cases",
       "category" : "",
       "tags"     : "",
