@@ -6,18 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>UI Testing Academy | UI Testing related content</title>
+<title>Never use sleep in test code | UI Testing Academy</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="UI Testing Academy" />
-<meta name="author" content="Alex Zhukovich" />
+<meta property="og:title" content="Never use sleep in test code" />
+<meta name="author" content="alex_zhukovich" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="UI Testing related content" />
-<meta property="og:description" content="UI Testing related content" />
-<link rel="canonical" href="https://ui-testing.academy/general/good-practices/" />
-<meta property="og:url" content="https://ui-testing.academy/general/good-practices/" />
+<meta name="description" content="We will explore approaches for replacing a sleep method in test cases." />
+<meta property="og:description" content="We will explore approaches for replacing a sleep method in test cases." />
+<link rel="canonical" href="https://ui-testing.academy/general/good-practices/never-use-sleep-in-test-code/" />
+<meta property="og:url" content="https://ui-testing.academy/general/good-practices/never-use-sleep-in-test-code/" />
 <meta property="og:site_name" content="UI Testing Academy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-20T00:00:00+00:00" />
 <script type="application/ld+json">
-{"headline":"UI Testing Academy","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ui-testing.academy/logo.svg"},"name":"Alex Zhukovich"},"author":{"@type":"Person","name":"Alex Zhukovich"},"url":"https://ui-testing.academy/general/good-practices/","description":"UI Testing related content","@type":"WebPage","@context":"http://schema.org"}</script>
+{"dateModified":"2020-09-20T00:00:00+00:00","datePublished":"2020-09-20T00:00:00+00:00","headline":"Never use sleep in test code","mainEntityOfPage":{"@type":"WebPage","@id":"https://ui-testing.academy/general/good-practices/never-use-sleep-in-test-code/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://ui-testing.academy/logo.svg"},"name":"alex_zhukovich"},"author":{"@type":"Person","name":"alex_zhukovich"},"url":"https://ui-testing.academy/general/good-practices/never-use-sleep-in-test-code/","description":"We will explore approaches for replacing a sleep method in test cases.","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:image" content="https://ui-testing.academy/uploads/logo.svg"/>
@@ -233,96 +235,175 @@ function searchResults(form) {
         
       
         
-          
           <ul class="uk-breadcrumb">
             <li><a href="/">Home</a></li>
             
               <li><a href="/#general">General information</a></li>
             
+            
+            
+            
+            <li><a href="/general/good-practices/">Good Practices</a></li>
           </ul>
-          <div class="uk-grid-small" data-uk-grid>
-            <div class="uk-width-auto uk-text-primary">
-              <span class="uk-margin-xsmall-top" data-uk-icon="icon: star; ratio: 2.6"></span>
-            </div>
-            <div class="uk-width-expand">
-              <h1 class="uk-article-title uk-margin-remove">Good Practices</h1>
-              <p class="uk-text-lead uk-text-muted uk-margin-small-top">Good practices which can be applied to UI testing</p>
-            </div>
-          </div>
           
     
-    <div class="uk-margin-medium-top">
-      
-        <div class="uk-card uk-card-category uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded uk-width-1-1">
-          <a class="uk-position-cover" href="/general/good-practices/all-test-cases-should-be-independent/"></a>
-          <h3 class="uk-card-title uk-margin-remove uk-text-primary">All test cases should be independent</h3>
-          <p class="uk-margin-small-top">We will explore why independent tests is a good practice and how to achieve this.</p>
-          <div class="uk-article-meta uk-flex uk-flex-middle">
+    <div class="uk-background-default uk-border-rounded uk-box-shadow-small">
+      <div class="uk-container uk-container-xsmall uk-padding-large">
+        <article class="uk-article">
+          <h1 class="uk-article-title">Never use sleep in test code</h1>
+          <div class="uk-article-meta uk-margin uk-flex uk-flex-middle">
             
-            
-              
-              <img class="uk-border-circle uk-avatar-small" data-src="https://ui-testing.academy/uploads/avatar/alex_zhukovich.png" src="https://ui-testing.academy/uploads/avatar/alex_zhukovich.png" alt="Alex Zhukovich" data-uk-img>
-            
-            <div>
-              
-                Written by Alex Zhukovich<br>
-              
-              <time datetime="2020-09-06T00:00:00+00:00">
-                
-                Sep 6, 2020
-              </time>
-            </div>
+
+
+  
+  <img class="uk-border-circle uk-avatar-small" data-src="https://ui-testing.academy/uploads/avatar/alex_zhukovich.png" src="https://ui-testing.academy/uploads/avatar/alex_zhukovich.png" alt="Alex Zhukovich" data-uk-img>
+
+
+<div>
+  
+    Written by Alex Zhukovich<br>
+  
+  <time datetime="2020-09-20T00:00:00+00:00">
+    
+    Sep 20, 2020
+  </time>
+</div>
           </div>
-        </div>
-      
-        <div class="uk-card uk-card-category uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded uk-width-1-1">
-          <a class="uk-position-cover" href="/general/good-practices/separate-your-tests-from-the-test-automation-framework/"></a>
-          <h3 class="uk-card-title uk-margin-remove uk-text-primary">Separate your tests from the test automation framework</h3>
-          <p class="uk-margin-small-top">We will explore reasons for separating test cases from the test automation framework</p>
-          <div class="uk-article-meta uk-flex uk-flex-middle">
+          
+          <div class="uk-article-content">
+            <p>Almost every application performs long-running operations, and automated UI test cases should wait until this operation is finished. Often we should wait in the following scenarios:</p>
+<ul>
+  <li>interaction with the back-end</li>
+  <li>interaction with the database (especially when we load a lot of data)</li>
+  <li>complicated calculations (plan a route to a destination in navigation applications)</li>
+</ul>
+
+<p>Different frameworks provide solutions for such operations. However, you can often find <code class="language-plaintext highlighter-rouge">sleep</code> operations in test code, which is usually a feature of the language and not one of the testing framework’s approaches.</p>
+
+<p>The main problem of such solutions is that the <code class="language-plaintext highlighter-rouge">sleep</code> method will wait for a certain amount of time, and very often, the long-running operation can finish faster. In this situation, we are wasting a lot of time because of a long timeout in <code class="language-plaintext highlighter-rouge">sleep</code> operation. When we have many test cases, we can reduce execution a lot by replacing the <code class="language-plaintext highlighter-rouge">sleep</code> method with an alternative from the testing framework.</p>
+
+<p>Let’s take a look at alternatives that we can use for replacing <code class="language-plaintext highlighter-rouge">sleep</code> methods. Almost all solutions from different frameworks work in the following ways:</p>
+<ul>
+  <li>checking condition multiple times until timeout is over</li>
+  <li>integrating test framework to application</li>
+</ul>
+
+<h2 id="checking-condition-multiple-times-until-timeout-is-over">Checking condition multiple times until timeout is over</h2>
+<p>A typical implementation of the wait method appears in different frameworks, like UiAutomator (<code class="language-plaintext highlighter-rouge">wait</code>), Appium (<code class="language-plaintext highlighter-rouge">waitForElement</code>), Espresso (custom <img src="https://developer.android.com/training/testing/espresso/idling-resource" alt="Idling Resource" />). This approach’s main idea is to check the condition more than once until timeout is over. Let’s imagine that we have a <code class="language-plaintext highlighter-rouge">wait</code> function with a timeout for 3 seconds, and we will check the condition every second. It means that this function can be done after 1, 2, or 3 seconds, and we can save a lot of time if this function takes more than 1 second for many test cases.</p>
+
+<h2 id="integrating-test-framework-to-application">Integrating test framework to application</h2>
+<p>Sometimes we can face a different approach, when we have to integrate a test framework inside the application. In this case, when the long-running operation starts, we tell the testing framework that the test case should wait. When the process is finished, we provide information to the framework that the test case can be continued — however, the main problem of this approach that our application is connected with a specific test framework. It can complicate migration to a new framework in the future, and you should always synchronize application code with test code.</p>
+
+<p>As you can see, we have more efficient approaches for replacing <code class="language-plaintext highlighter-rouge">sleep</code> in the test code, and reduce execution time. I recommend you verify conditions multiple times and don’t wait until the timeout is over.</p>
+
+<p>Note: Many frameworks already have such functions.</p>
+
+
             
+              <div class="share uk-text-center uk-margin-large-top">
+    
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=Never+use+sleep+in+test+code&url=https://ui-testing.academy/general/good-practices/never-use-sleep-in-test-code/&via=ui_test_academy&related=ui_test_academy" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    
+    
+        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fui-testing.academy%2Fgeneral%2Fgood-practices%2Fnever-use-sleep-in-test-code%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    
+</div>
             
-              
-              <img class="uk-border-circle uk-avatar-small" data-src="https://ui-testing.academy/uploads/avatar/alex_zhukovich.png" src="https://ui-testing.academy/uploads/avatar/alex_zhukovich.png" alt="Alex Zhukovich" data-uk-img>
-            
-            <div>
-              
-                Written by Alex Zhukovich<br>
-              
-              <time datetime="2020-09-19T00:00:00+00:00">
-                
-                Sep 19, 2020
-              </time>
-            </div>
           </div>
-        </div>
+          <div class="uk-margin-large-top">
+  <div class="uk-child-width-expand@s uk-grid-large" data-uk-grid>
+    <div>
       
-        <div class="uk-card uk-card-category uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded uk-width-1-1">
-          <a class="uk-position-cover" href="/general/good-practices/never-use-sleep-in-test-code/"></a>
-          <h3 class="uk-card-title uk-margin-remove uk-text-primary">Never use sleep in test code</h3>
-          <p class="uk-margin-small-top">We will explore approaches for replacing a sleep method in test cases.</p>
-          <div class="uk-article-meta uk-flex uk-flex-middle">
-            
-            
-              
-              <img class="uk-border-circle uk-avatar-small" data-src="https://ui-testing.academy/uploads/avatar/alex_zhukovich.png" src="https://ui-testing.academy/uploads/avatar/alex_zhukovich.png" alt="Alex Zhukovich" data-uk-img>
-            
-            <div>
-              
-                Written by Alex Zhukovich<br>
-              
-              <time datetime="2020-09-20T00:00:00+00:00">
-                
-                Sep 20, 2020
-              </time>
-            </div>
-          </div>
-        </div>
+      <h4>Separate your tests from the test automation framework</h4>
+      <div><a class="uk-remove-underline hvr-back" 
+        href="/general/good-practices/separate-your-tests-from-the-test-automation-framework/">&larr; Previous</a>
+      </div>
       
     </div>
-    
+    <div class="uk-text-right">
+      
+    </div>
   </div>
 </div>
+          <div class="uk-margin-large-top">
+    <h4>Related Posts</h4>
+
+    
+    
+    
+
+    <ul class="uk-list">
+    
+
+        
+        
+
+        
+
+        
+
+    
+
+        
+        
+
+        
+
+        
+            <li><a href="/general/good-practices/separate-your-tests-from-the-test-automation-framework/">Separate your tests from the test automation framework</a></li>
+            
+            
+        
+
+    
+
+        
+        
+
+        
+
+        
+
+    
+
+        
+        
+
+        
+
+        
+
+    
+
+        
+        
+
+        
+
+        
+            <li><a href="/general/good-practices/all-test-cases-should-be-independent/">All test cases should be independent</a></li>
+            
+            
+        
+
+    
+    </ul>
+</div>
+
+          
+        </article>
+        <script>
+          // Table of contents scroll to
+          UIkit.scroll('#markdown-toc a', {
+            duration: 400,
+            offset: 40
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <div id="offcanvas-posts" data-uk-offcanvas="overlay: true">
     <div class="uk-offcanvas-bar">
