@@ -21,6 +21,12 @@ jobs:
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - name: Build project
         run: bundle exec jekyll build -d docs-tmp
+      - name: Add CNAME file
+        run: |
+          touch docs-tmp/CNAME
+          echo "ui-testing.academy" >> docs-tmp/CNAME  
       - name: Deploy project
         run: |
-          git push origin `git subtree split --prefix docs-tmp main`:gh-pages --force
+          git --work-tree docs-tmp add --all
+          git --work-tree docs-tmp commit -m 'Deploy'
+          git push origin HEAD:gh-pages --force
