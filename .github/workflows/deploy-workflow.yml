@@ -23,4 +23,4 @@ jobs:
         run: bundle exec jekyll build -d docs-tmp
       - name: Deploy project
         run: |
-          git subtree push --prefix docs-tmp origin gh-pages
+          git push origin `git subtree split --prefix docs-tmp main`:gh-pages --force
