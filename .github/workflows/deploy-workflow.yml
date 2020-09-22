@@ -21,6 +21,11 @@ jobs:
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - name: Build project
         run: bundle exec jekyll build -d docs-tmp
+      - name: Clean up docs-tmp folder
+        run : |
+          rm docs-tmp/logo.svg
+          rm docs-tmp/README.md
+          rm docs-tmp/LICENSE.txt
       - name: Add CNAME file
         run: |
           touch docs-tmp/CNAME
