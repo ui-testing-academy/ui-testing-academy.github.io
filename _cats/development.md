@@ -8,7 +8,6 @@ pagination:
     values:
       - customization
       - development
-      matching: all
+    matching: all
 categories: [customization, development]
 ---
-
