@@ -123,6 +123,11 @@ collections:
     output:         false
   changelogs:
     output:         false
+  common:
+    output:         true
+    layout:         common 
+  cats:
+    output:         true
 
 # Defaults
 defaults:
@@ -138,3 +143,8 @@ defaults:
       type:         pages
     values:
       layout:       page
+  - scope:
+      path:         "/:categories/"
+      type:         commons
+    values:
+      layout:       common

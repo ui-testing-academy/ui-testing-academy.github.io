@@ -1,0 +1,42 @@
+---
+layout: default
+parent:
+---
+
+<div class="uk-section uk-section-muted">
+  <div class="uk-container">
+
+    {%- include breadcrumbs.html -%}
+
+    <h1 style="font-size: 50px;">{{page.title}}</h1>
+    <p>{{page.description}}</p>
+    {{content}}
+    {% assign cats = site.cats %}
+    {% assign i = page.categories.size | minus: 1 %}
+    <ul>
+      
+      {% for p in cats %}
+      
+      {% assign k1 = p.categories.size %}
+      {% assign k2 =i | plus: 2 %}
+      
+      {% if k1 == k2 %}
+
+      {%- assign s1 = "" -%}
+      {%- for l in (0..i) -%}
+        {%- assign s1 = s1 | append: p.categories[l] -%}
+      {%- endfor -%}
+
+      {%- assign s2 = page.categories | join: "" -%}
+      {% if s1 == s2 %}
+
+      <li><a href="{{p.url}}">{{p.title}}</a></li>
+
+      {% endif %}
+
+      {% endif %}
+
+      {% endfor %}
+    </ul>
+  </div>
+</div>

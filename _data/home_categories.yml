@@ -24,6 +24,11 @@
       desc: Good practices which can be applied to UI testing.
       icon: star
 
+    - permalink: /platform/
+      title: Platforms
+      desc: Web, Android, etc.
+      icon: cog
+
 # - title: Platforms
 #   subtitle:
 #   category: platform
