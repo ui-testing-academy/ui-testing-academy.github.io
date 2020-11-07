@@ -30,7 +30,7 @@ parent:
       {%- assign s2 = page.categories | join: "" -%}
       {% if s1 == s2 %}
 
-      <li><a href="{{p.url}}">{{p.title}}</a></li>
+      <li><a href="{{p.url | relative_url}}">{{p.title}}</a></li>
 
       {% endif %}
 
