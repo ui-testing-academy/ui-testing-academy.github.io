@@ -126,7 +126,7 @@ collections:
   common:
     output:         true
     layout:         common 
-  cats:
+  articles:
     output:         true
 
 # Defaults
@@ -143,8 +143,3 @@ defaults:
       type:         pages
     values:
       layout:       page
-  - scope:
-      path:         "/:categories/"
-      type:         commons
-    values:
-      layout:       common
