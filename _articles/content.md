@@ -9,6 +9,6 @@ pagination:
       - setup
       - content
       matching: all
-categories: [setup, content]
+categories: [ setup, content]
 ---
 

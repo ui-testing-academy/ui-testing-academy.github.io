@@ -11,6 +11,6 @@ pagination:
       - specific
       - best-practices
     matching: all
-categories: [platform, android, frameworks, best-practices]
+categories: [ platform, android, frameworks, best-practices]
 ---
 

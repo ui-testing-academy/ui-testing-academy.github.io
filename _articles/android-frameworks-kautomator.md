@@ -11,6 +11,6 @@ pagination:
       - frameworks
       - kautomator
     matching: all
-categories: [platform, android, frameworks, kautomator]
+categories: [ platform, android, frameworks, kautomator]
 ---
 

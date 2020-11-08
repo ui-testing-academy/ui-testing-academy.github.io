@@ -11,6 +11,6 @@ pagination:
       - specific
       - adb-commands
     matching: all
-categories: [platform, android, frameworks, adb-commands]
+categories: [ platform, android, frameworks, adb-commands]
 ---
 

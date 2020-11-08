@@ -9,5 +9,5 @@ pagination:
       - customization
       - help
       matching: all
-categories: [customization, help]
+categories: [ customization, help]
 ---

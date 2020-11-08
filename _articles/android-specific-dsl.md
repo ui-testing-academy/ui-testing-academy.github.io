@@ -11,6 +11,6 @@ pagination:
       - specific
       - dsl
     matching: all
-categories: [platform, android, specific, dsl]
+categories: [ platform, android, specific, dsl]
 ---
 

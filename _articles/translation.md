@@ -9,6 +9,6 @@ pagination:
       - setup
       - translation
     matching: all
-categories: [setup, translation]
+categories: [ setup, translation]
 ---
 

@@ -11,6 +11,6 @@ pagination:
       - specific
       - tools
     matching: all
-categories: [platform, android, specific, tools]
+categories: [ platform, android, specific, tools]
 ---
 

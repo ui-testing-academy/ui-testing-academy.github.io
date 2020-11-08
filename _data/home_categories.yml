@@ -4,22 +4,22 @@
   category: general
   categories:
 
-    - permalink: /general/ui-testing/
+    - permalink: /ui-testing/
       title: UI testing
       desc: General topics connected with UI testing.
       icon: file-text
 
-    - permalink: /general/naming/
+    - permalink: /naming/
       title: Naming
       desc: Naming conventions for test cases.
       icon: bold
 
-#    - permalink: /general/dsl/
+#    - permalink: /dsl/
 #      title: Domain Specific Language
 #      desc: Description for "Domain Specific Language (DSL)"
 #      icon: album
 
-    - permalink: /general/good-practices/
+    - permalink: /good-practices/
       title: Good Practices
       desc: Good practices which can be applied to UI testing.
       icon: star

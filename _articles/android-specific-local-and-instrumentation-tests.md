@@ -11,7 +11,7 @@ pagination:
       - specific
       - local-and-instrumentation-tests
     matching: all
-categories: [platform, android, specific, local-and-instrumentation-tests]
+categories: [ platform, android, specific, local-and-instrumentation-tests]
 
 ---
 

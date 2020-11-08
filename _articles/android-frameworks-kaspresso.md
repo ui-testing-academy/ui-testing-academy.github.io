@@ -11,6 +11,6 @@ pagination:
       - frameworks
       - kaspresso
     matching: all
-categories: [platform, android, frameworks, kaspresso]
+categories: [ platform, android, frameworks, kaspresso]
 ---
 

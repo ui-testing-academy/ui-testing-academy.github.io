@@ -12,7 +12,7 @@ pagination:
       - frameworks
       - appium
     matching: all 
-categories: [platform, android, frameworks, appium]
+categories: [ platform, android, frameworks, appium]
 ---
 
 ## Appium Philosophy

@@ -12,7 +12,7 @@ pagination:
       - tools
       - workbox
     matching: all
-categories: [platform, web, tools, workbox]
+categories: [ platform, web, tools, workbox]
 ---
 
 Workbox is a set of service worker libraries and tools that make it easy to build an offline PWA and take advantage of the service worker APIs.

@@ -1,7 +1,7 @@
 ---
 title: 'Approaches of UI testing'
 description: 'Different ways of UI testing can be done: manual testing, record-and-replay testing, and model-based testing. We will explore the pros and cons of each approach.'
-categories: [general, ui-testing]
+categories: [ ui-testing]
 author: alex_zhukovich
 ---
 

@@ -11,6 +11,6 @@ pagination:
       - frameworks
       - espresso
     matching: all
-categories: [platform, android, frameworks, espresso]
+categories: [ platform, android, frameworks, espresso]
 ---
 

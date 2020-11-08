@@ -9,7 +9,7 @@ pagination:
       - setup
       - basics
       matching: all
-categories: [setup, basics]
+categories: [ setup, basics]
   # sort_field: 'title'
   # sort_reverse: false
 ---

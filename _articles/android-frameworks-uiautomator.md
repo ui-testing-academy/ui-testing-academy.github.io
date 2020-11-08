@@ -11,6 +11,6 @@ pagination:
       - frameworks
       - uiautomator
   matching: all
-categories: [platform, android, frameworks, uiautomator]
+categories: [ platform, android, frameworks, uiautomator]
 ---
 

@@ -11,6 +11,6 @@ pagination:
       - frameworks
       - kakao
     matching: all
-categories: [platform, android, frameworks, kakao]
+categories: [ platform, android, frameworks, kakao]
 ---
 

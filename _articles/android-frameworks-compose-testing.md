@@ -11,6 +11,6 @@ pagination:
       - frameworks
       - compose-testing
     matching: all
-categories: [platform, android, frameworks, compose-testing]
+categories: [ platform, android, frameworks, compose-testing]
 ---
 

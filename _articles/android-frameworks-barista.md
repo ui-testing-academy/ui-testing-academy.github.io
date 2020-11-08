@@ -11,6 +11,6 @@ pagination:
       - frameworks
       - barista
     matching: all
-categories: [platform, android, frameworks, barista]
+categories: [ platform, android, frameworks, barista]
 ---
 

@@ -11,6 +11,6 @@ pagination:
       - frameworks
       - framework-comparison
     matching: all
-categories: [platform, android, frameworks, framework-comparison]
+categories: [ platform, android, frameworks, framework-comparison]
 ---
 

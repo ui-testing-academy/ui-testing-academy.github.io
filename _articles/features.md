@@ -9,6 +9,6 @@ pagination:
       - setup
       - features
       matching: all
-categories: [setup, features]
+categories: [ setup, features]
 ---
 

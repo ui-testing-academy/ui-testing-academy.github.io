@@ -9,5 +9,5 @@ pagination:
       - customization
       - development
     matching: all
-categories: [customization, development]
+categories: [ customization, development]
 ---

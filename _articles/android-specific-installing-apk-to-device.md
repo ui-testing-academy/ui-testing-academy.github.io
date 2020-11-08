@@ -11,6 +11,6 @@ pagination:
       - specific
       - installing-apk-to-device
     matching: all
-categories: [platform, android, specific, installing-apk-to-device]
+categories: [ platform, android, specific, installing-apk-to-device]
 ---
 
