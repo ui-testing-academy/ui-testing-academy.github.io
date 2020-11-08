@@ -13,7 +13,8 @@ parent:
     {{content}}
     {% assign cats = site.cats %}
     {% assign i = page.categories.size | minus: 1 %}
-    <ul>
+
+    <div class="uk-child-width-1-2@m uk-grid-match uk-grid-small uk-margin-medium-top uk-grid" data-uk-grid="">
       
       {% for p in cats %}
       
@@ -30,13 +31,31 @@ parent:
       {%- assign s2 = page.categories | join: "" -%}
       {% if s1 == s2 %}
 
-      <li><a href="{{p.url | relative_url}}">{{p.title}}</a></li>
+      <div class="uk-first-column">
+            <div class="uk-card uk-card uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded">
+        <a class="uk-position-cover" href="{{p.url | relative_url}}"></a>
+        <div class="uk-grid-small uk-grid" data-uk-grid="">
+          <div class="uk-width-auto uk-text-primary uk-flex uk-flex-middle uk-first-column">
+        
+            <span data-uk-icon="icon: {%- if p.icon -%}{{p.icon}}{%- else -%}file-text{%- endif -%}; ratio: 2.6" class="uk-icon">
+            </span>
+        
+          </div>
+          <div class="uk-width-expand">
+            <h3 class="uk-card-title uk-margin-remove uk-text-primary">{{p.title}}</h3>
+        
+            <p class="uk-text-muted uk-margin-remove">{{p.description}}</p>
+        
+          </div>
+        </div>
+      </div>
+      </div>
 
       {% endif %}
 
       {% endif %}
 
       {% endfor %}
-    </ul>
+    </div>
   </div>
 </div>
