@@ -8,7 +8,7 @@ pagination:
     values:
       - setup
       - content
-      matching: all
+    matching: all
 categories: [ setup, content]
 ---
 

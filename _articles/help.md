@@ -8,6 +8,6 @@ pagination:
     values:
       - customization
       - help
-      matching: all
+    matching: all
 categories: [ customization, help]
 ---

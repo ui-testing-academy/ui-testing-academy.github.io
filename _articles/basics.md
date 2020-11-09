@@ -8,7 +8,7 @@ pagination:
     values:
       - setup
       - basics
-      matching: all
+    matching: all
 categories: [ setup, basics]
   # sort_field: 'title'
   # sort_reverse: false
