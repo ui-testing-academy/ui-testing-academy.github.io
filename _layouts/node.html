@@ -22,7 +22,7 @@ layout: default
       {% for p in articles %}
 
       {% assign k1 = p.categories.size %}
-      {%- if p.layout == "common" -%}
+      {%- if p.layout == "node" -%}
         {% assign k2 =i | plus: 2 %}
         {%- else -%}
         {% assign k2 =i | plus: 1 %}
