@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: node
 permalink: /platform/android/specific/best-practices/
 pagination: 
   enabled: true

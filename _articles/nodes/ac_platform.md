@@ -1,6 +1,6 @@
 ---
 title: Platform
-layout: common
+layout: node
 description: Android WEB, etc
 icon: code
 categories: [ platform]

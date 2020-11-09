@@ -9,7 +9,7 @@ header:
   list_title: General information
 description: Android frameworks, WEB, Naming, etc
 icon: 
-layout: common
+layout: node
 categories: []
 ---
 

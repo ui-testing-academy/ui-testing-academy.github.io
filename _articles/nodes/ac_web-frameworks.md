@@ -1,6 +1,6 @@
 ---
 title: WEB Frameworks
-layout: common
+layout: node
 description: WEB Specific, Frameworks, etc
 icon: settings
 categories: [ platform, web, frameworks]

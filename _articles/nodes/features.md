@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: node
 permalink: /setup/features/
 pagination: 
   enabled: true

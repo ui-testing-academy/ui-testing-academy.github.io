@@ -1,6 +1,6 @@
 ---
 title: Good Practices
-layout: common
+layout: node
 description: Good practices which can be applied to UI testing.
 icon: star
 categories: [ good-practices]

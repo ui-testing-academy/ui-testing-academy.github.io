@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: node
 permalink: /platform/android/frameworks/espresso/
 pagination: 
   enabled: true

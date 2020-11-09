@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: 'Naming conventions for test cases'
 description: 'We will explore different naming conventions for test cases.'
 permalink:  /:categories/:title/

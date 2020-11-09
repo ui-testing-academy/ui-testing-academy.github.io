@@ -1,17 +1,7 @@
 ---
 title: Appium
-layout: post
+layout: article
 permalink:  /:categories/:title/
-pagination: 
-  enabled: true
-  permalink: /:num/
-  categories:
-    values:
-      - platform
-      - android
-      - frameworks
-      - appium
-    matching: all 
 categories: [ platform, android, frameworks, appium]
 ---
 

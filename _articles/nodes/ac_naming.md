@@ -1,6 +1,6 @@
 ---
 title: Naming
-layout: common
+layout: node
 description: Naming conventions for test cases.
 icon: bold
 categories: [ naming]

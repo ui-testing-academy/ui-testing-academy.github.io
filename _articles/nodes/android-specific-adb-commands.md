@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: node
 permalink: /platform/android/specific/adb-commands/
 pagination: 
   enabled: true

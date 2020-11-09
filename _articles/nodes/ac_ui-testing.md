@@ -1,6 +1,6 @@
 ---
 title: UI testing
-layout: common
+layout: node
 description: General topics connected with UI testing.
 icon: file-text
 categories: [ ui-testing]

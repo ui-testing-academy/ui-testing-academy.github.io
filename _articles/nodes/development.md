@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: node
 permalink: /customization/development/
 pagination: 
   enabled: true

@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: node
 permalink: /:categories/:title/
 pagination: 
   enabled: true

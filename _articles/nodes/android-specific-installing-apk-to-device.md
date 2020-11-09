@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: node
 permalink: /platform/android/specific/installing-apk-to-device/
 pagination: 
   enabled: true

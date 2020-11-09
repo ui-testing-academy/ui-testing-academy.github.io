@@ -4,7 +4,7 @@ layout: default
 
 <div class="uk-section uk-section-muted">
   <div class="uk-container">
-    {% for section in site.data.home_categories %}
+    {% for section in site.articles %}
       {% for item in section.categories %}
         {% if page.url contains item.permalink %}
           {% assign current_category = item %}

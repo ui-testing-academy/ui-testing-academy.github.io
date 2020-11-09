@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: 'Never use sleep in test code'
 description: 'We will explore approaches for replacing a sleep method in test cases.'
 permalink:  /:categories/:title/
