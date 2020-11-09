@@ -1,6 +1,6 @@
 ---
 title: Express
-layout: post
+layout: common
 permalink: /platform/web/frameworks/express/
 pagination: 
   enabled: true

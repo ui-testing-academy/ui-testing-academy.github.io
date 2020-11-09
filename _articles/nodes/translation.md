@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: common
 permalink: /setup/translation/
 pagination: 
   enabled: true

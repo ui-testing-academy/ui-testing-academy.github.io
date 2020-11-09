@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: common
 permalink: /platform/android/specific/local-and-instrumentation-tests/
 pagination: 
   enabled: true

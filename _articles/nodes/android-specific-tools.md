@@ -1,6 +1,6 @@
 ---
-layout: post
-permalink: /platform/android/specific/adb-commands/
+layout: common
+permalink: /platform/android/specific/tools/
 pagination: 
   enabled: true
   permalink: /:num/
@@ -9,8 +9,8 @@ pagination:
       - platform
       - android
       - specific
-      - adb-commands
+      - tools
     matching: all
-categories: [ platform, android, frameworks, adb-commands]
+categories: [ platform, android, specific, tools]
 ---
 

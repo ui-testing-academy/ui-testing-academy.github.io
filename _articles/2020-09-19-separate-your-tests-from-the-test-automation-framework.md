@@ -1,6 +1,8 @@
 ---
+layout: post
 title: 'Separate your tests from the test automation framework'
 description: 'We will explore reasons for separating test cases from the test automation framework.'
+permalink:  /:categories/:title/
 categories: [ good-practices]
 author: alex_zhukovich
 ---

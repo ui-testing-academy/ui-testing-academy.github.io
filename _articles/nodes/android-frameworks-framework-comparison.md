@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: common
 permalink: /platform/android/frameworks/framework-comparison/
 pagination: 
   enabled: true

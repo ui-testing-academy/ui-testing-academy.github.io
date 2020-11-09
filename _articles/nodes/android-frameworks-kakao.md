@@ -1,6 +1,6 @@
 ---
-layout: post
-permalink: /platform/android/frameworks/kautomator/
+layout: common
+permalink: /platform/android/frameworks/kakao/
 pagination: 
   enabled: true
   permalink: /:num/
@@ -9,8 +9,8 @@ pagination:
       - platform
       - android
       - frameworks
-      - kautomator
+      - kakao
     matching: all
-categories: [ platform, android, frameworks, kautomator]
+categories: [ platform, android, frameworks, kakao]
 ---
 

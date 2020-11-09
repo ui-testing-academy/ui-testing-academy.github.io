@@ -1,6 +1,6 @@
 ---
 title: Workbox
-layout: post
+layout: common
 permalink: /platform/web/tools/workbox/
 pagination: 
   enabled: true

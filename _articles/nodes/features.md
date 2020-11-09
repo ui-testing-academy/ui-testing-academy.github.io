@@ -1,14 +1,14 @@
 ---
-layout: post
-permalink: /setup/content/
+layout: common
+permalink: /setup/features/
 pagination: 
   enabled: true
   permalink: /:num/
   categories:
     values:
       - setup
-      - content
+      - features
     matching: all
-categories: [ setup, content]
+categories: [ setup, features]
 ---
 

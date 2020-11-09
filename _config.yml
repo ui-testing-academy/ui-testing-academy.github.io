@@ -104,7 +104,7 @@ uploads:            /uploads/
 markdown:           kramdown
 highlighter:        rouge
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-gist
@@ -125,7 +125,6 @@ collections:
     output:         false
   common:
     output:         true
-    layout:         common 
   articles:
     output:         true
 

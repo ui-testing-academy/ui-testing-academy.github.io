@@ -1,6 +1,6 @@
 ---
-layout: post
-permalink: /platform/android/frameworks/barista/
+layout: common
+permalink: /platform/android/frameworks/kaspresso/
 pagination: 
   enabled: true
   permalink: /:num/
@@ -9,8 +9,8 @@ pagination:
       - platform
       - android
       - frameworks
-      - barista
+      - kaspresso
     matching: all
-categories: [ platform, android, frameworks, barista]
+categories: [ platform, android, frameworks, kaspresso]
 ---
 

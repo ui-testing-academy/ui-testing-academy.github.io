@@ -1,7 +1,9 @@
 ---
+layout: post
 title: 'All test cases should be independent'
 description: 'We will explore why independent tests is a good practice and how to achieve this.'
 categories: [ good-practices]
+permalink:  /:categories/:title/
 author: alex_zhukovich
 ---
 

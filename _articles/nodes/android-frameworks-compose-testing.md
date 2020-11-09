@@ -1,6 +1,6 @@
 ---
-layout: post
-permalink: /platform/android/frameworks/kakao/
+layout: common
+permalink: /:categories/:title/
 pagination: 
   enabled: true
   permalink: /:num/
@@ -9,8 +9,8 @@ pagination:
       - platform
       - android
       - frameworks
-      - kakao
+      - compose-testing
     matching: all
-categories: [ platform, android, frameworks, kakao]
+categories: [ platform, android, frameworks, compose-testing]
 ---
 

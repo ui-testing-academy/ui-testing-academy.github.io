@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: common
 permalink: /platform/android/specific/dsl/
 pagination: 
   enabled: true

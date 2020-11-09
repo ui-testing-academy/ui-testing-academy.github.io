@@ -1,7 +1,9 @@
 ---
+layout: post
 title: 'Never use sleep in test code'
 description: 'We will explore approaches for replacing a sleep method in test cases.'
-categories: [ good-practices]
+permalink:  /:categories/:title/
+categories: [good-practices]
 author: alex_zhukovich
 ---
 Almost every application performs long-running operations, and automated UI test cases should wait until this operation is finished. Often we should wait in the following scenarios:

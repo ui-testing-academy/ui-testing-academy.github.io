@@ -1,6 +1,8 @@
 ---
+layout: post
 title: 'Naming conventions for test cases'
 description: 'We will explore different naming conventions for test cases.'
+permalink:  /:categories/:title/
 categories: [ naming]
 author: alex_zhukovich
 ---

@@ -1,7 +1,7 @@
 ---
 title: Appium
 layout: post
-permalink: /platform/android/frameworks/appium/
+permalink:  /:categories/:title/
 pagination: 
   enabled: true
   permalink: /:num/

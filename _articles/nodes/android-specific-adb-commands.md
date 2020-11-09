@@ -1,6 +1,6 @@
 ---
-layout: post
-permalink: /platform/android/specific/best-practices/
+layout: common
+permalink: /platform/android/specific/adb-commands/
 pagination: 
   enabled: true
   permalink: /:num/
@@ -9,8 +9,8 @@ pagination:
       - platform
       - android
       - specific
-      - best-practices
+      - adb-commands
     matching: all
-categories: [ platform, android, frameworks, best-practices]
+categories: [ platform, android, frameworks, adb-commands]
 ---
 
