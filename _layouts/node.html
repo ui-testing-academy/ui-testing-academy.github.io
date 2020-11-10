@@ -10,23 +10,39 @@ layout: default
     {%- else -%}
     {%- include breadcrumbs.html -%}
 
-    <h1 style="font-size: 50px;">{{page.title}}</h1>
-    <p>{{page.description}}</p>
+    <div class="uk-grid-small uk-grid" data-uk-grid="">
+
+      <div class="uk-width-auto uk-text-primary uk-first-column">
+        <span class="uk-margin-xsmall-top uk-icon" data-uk-icon="icon: star; ratio: 2.6">
+          <svg width="52" height="52" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="{{page.icon}}">
+            <polygon fill="none" stroke="#000" stroke-width="1.01"
+              points="10 2 12.63 7.27 18.5 8.12 14.25 12.22 15.25 18 10 15.27 4.75 18 5.75 12.22 1.5 8.12 7.37 7.27">
+            </polygon>
+          </svg>
+        </span>
+      </div>
+
+      <div class="uk-width-expand">
+        <h1 class="uk-article-title uk-margin-remove">{{page.title}}</h1>
+        <p class="uk-text-lead uk-text-muted uk-margin-small-top">{{page.description}}</p>
+      </div>
+    </div>
+
     {%- endif -%}
 
     {% assign articles = site.articles %}
     {% assign i = page.categories.size | minus: 1 %}
-
+    
     <div class="uk-child-width-1-2@m uk-grid-match uk-grid-small uk-margin-medium-top uk-grid" data-uk-grid="">
 
       {% for p in articles %}
 
       {% assign k1 = p.categories.size %}
       {%- if p.layout == "node" -%}
-        {% assign k2 =i | plus: 2 %}
-        {%- else -%}
-        {% assign k2 =i | plus: 1 %}
-        {%- endif -%}
+      {% assign k2 =i | plus: 2 %}
+      {%- else -%}
+      {% assign k2 =i | plus: 1 %}
+      {%- endif -%}
 
       {% if k1 == k2 %}
       {%- assign s1 = "" -%}
@@ -38,34 +54,48 @@ layout: default
       {% if s1 == s2 %}
 
       <div class="uk-first-column">
+        
         <div class="uk-card uk-card uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded">
-          <a class="uk-position-cover" href="{{p.url | relative_url}}"></a>
-          <div class="uk-grid-small uk-grid" data-uk-grid="">
-            <div class="uk-width-auto uk-text-primary uk-flex uk-flex-middle uk-first-column">
 
-              <span data-uk-icon="icon: {%- if p.icon -%}{{p.icon}}{%- else -%}file-text{%- endif -%}; ratio: 2.6"
-                class="uk-icon">
-              </span>
+            <a class="uk-position-cover" href="{{p.url | relative_url}}"></a>
+            <div class="uk-grid-small uk-grid" data-uk-grid="">
+              <div class="uk-width-auto uk-text-primary uk-flex uk-flex-middle uk-first-column">
+                {%- if p.icon -%}
+                <span data-uk-icon="icon: {%- if p.icon -%}{{p.icon}}{%- else -%}file-text{%- endif -%}; ratio: 2.6"
+                  class="uk-icon">
+                </span>
+                {%- endif -%}
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove uk-text-primary">{{p.title}}</h3>
+                <p class="uk-text-muted uk-margin-remove">{{p.description}}</p>
+                {%- if p.author -%}
+                {%- assign author = p.author -%}
+                {%- assign a = site.authors[author] -%}
+                <div class="uk-article-meta uk-flex uk-flex-middle" style="margin-top: 10px;">
+                  <img class="uk-border-circle uk-avatar-small" data-src="/uploads/{{a.avatar}}"
+                    src="/uploads/{{a.avatar}}" alt="{{a.name}}" data-uk-img="">
+                  <div>
+                    Written by {{a.name}}<br>
+                    <time datetime="{{p.date}}">{{p.date| date_to_string: "ordinal", "US"}}</time>
+                  </div>
+                  <br>
+                </div>
 
-            </div>
-            <div class="uk-width-expand">
-              <h3 class="uk-card-title uk-margin-remove uk-text-primary">{{p.title}}</h3>
-
-              <p class="uk-text-muted uk-margin-remove">{{p.description}}</p>
-
+                {%- endif -%}
+              </div>
             </div>
           </div>
         </div>
+
+        {% endif %}
+
+        {% endif %}
+
+        {% endfor %}
       </div>
 
-      {% endif %}
+      {{content}}
 
-      {% endif %}
-
-      {% endfor %}
     </div>
-
-    {{content}}
-
   </div>
-</div>
