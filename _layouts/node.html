@@ -33,7 +33,10 @@ layout: default
     {% assign articles = site.articles %}
     {% assign i = page.categories.size | minus: 1 %}
     
-    <div class="uk-child-width-1-2@m uk-grid-match uk-grid-small uk-margin-medium-top uk-grid" data-uk-grid="">
+    <div class="uk-margin-medium-top 
+    {% if site.node_grid == true %}
+    uk-grid uk-child-width-1-2@m uk-grid-match uk-grid-small
+    " data-uk-grid="{% endif %}">
 
       {% for p in articles %}
 
@@ -55,8 +58,7 @@ layout: default
 
       <div class="uk-first-column">
         
-        <div class="uk-card uk-card uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded">
-
+        <div class="{% if site.node_grid %}uk-card uk-category uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded {% else %}uk-card uk-card-category uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded uk-width-1-1 uk-margin-bottom{% endif %}">
             <a class="uk-position-cover" href="{{p.url | relative_url}}"></a>
             <div class="uk-grid-small uk-grid" data-uk-grid="">
               <div class="uk-width-auto uk-text-primary uk-flex uk-flex-middle uk-first-column">
