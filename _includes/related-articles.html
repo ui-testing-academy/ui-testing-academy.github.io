@@ -1,5 +1,5 @@
-<div class="uk-margin-large-top">
-    <h4>{{ site.data.translation[site.lang].related_posts | default: "Related Posts" }}</h4>
+<div class="uk-margin-large-top related-box">
+    <h4 >{{ site.data.translation[site.lang].related_posts | default: "Related Posts" }}</h4>
 
     {% assign maxRelated = 4 %}
     {% assign minCommonTags =  1 %}
@@ -28,5 +28,12 @@
         {% endif %}
 
     {% endfor %}
-    </ul>
+</ul>
 </div>
+<style>
+{%- if maxRelatedCounter == 0 -%}
+    .related-box {
+        display: none;
+    }
+{%- endif -%}
+</style>
