@@ -2,7 +2,7 @@
 layout: null
 ---
 [
-  {% for post in site.posts %}
+  {% for post in site.articles %}
     {
       "title"    : "{{ post.title | escape }}",
       "category" : "{{ post.category }}",
