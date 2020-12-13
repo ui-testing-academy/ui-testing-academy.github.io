@@ -4,9 +4,9 @@ header:
   # image: header.jpg
   # background: "rgba(0, 0, 0, 0.5)"
   # color: light
-  title: Here you learn more about UI testing
+  title: 
   subtitle: 
-  list_title: General information
+  list_title: Here you learn more about UI testing
 description: Android frameworks, WEB, Naming, etc
 icon: 
 layout: home
