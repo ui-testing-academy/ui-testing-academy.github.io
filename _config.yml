@@ -10,13 +10,13 @@ description:        UI Testing related content
 lang:               en
 
 # Site subpath, e.g. /blog
-baseurl:            ""
+baseurl:  
 
 # Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
 permalink:          /:categories/:title/
 
 # Site base hostname & protocol, e.g. http://example.com
-url:                "https://ui-testing.academy"
+url:                
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
 logo: logo.svg    
@@ -88,14 +88,16 @@ disqus:
 google_analytics:
 
 # Pagination Settings
-pagination:
-  enabled:          true
-  per_page:         10
+# pagination:
+#  enabled:          true
+#  per_page:         6
   # permalink: '/page/:num/'
   # title_suffix: ' - page :num'
   # limit: 0
   # sort_field: 'date'
   # sort_reverse: true
+
+
 
 # Path to post content assets directory i.e post images, pdfs etc
 uploads:            /uploads/
@@ -103,8 +105,8 @@ uploads:            /uploads/
 # Build settings
 markdown:           kramdown
 highlighter:        rouge
-
-gems:
+node_grid:          true
+plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-gist
@@ -123,6 +125,9 @@ collections:
     output:         false
   changelogs:
     output:         false
+  articles:
+    output:         true
+    layout:         article
 
 # Defaults
 defaults:

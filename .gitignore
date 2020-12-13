@@ -6,6 +6,7 @@ _site
 Gemfile.lock
 vendor
 /docs/
+_draft
 
 ### Gulp ###
 package.json

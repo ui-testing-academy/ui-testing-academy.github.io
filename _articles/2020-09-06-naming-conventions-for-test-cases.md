@@ -1,7 +1,9 @@
 ---
+layout: article
 title: 'Naming conventions for test cases'
 description: 'We will explore different naming conventions for test cases.'
-categories: [general, naming]
+permalink:  /:categories/:title/
+categories: [ naming]
 author: alex_zhukovich
 ---
 A name is an essential part of a test suite and each test scenario. When analyzing test reports, all you see are the names of the test cases. The right name of the test case provides information about the scenario, and often, it's enough information for understanding the main idea.
