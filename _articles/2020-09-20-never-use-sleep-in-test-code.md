@@ -1,7 +1,9 @@
 ---
+layout: article
 title: 'Never use sleep in test code'
 description: 'We will explore approaches for replacing a sleep method in test cases.'
-categories: [general, good-practices]
+permalink:  /:categories/:title/
+categories: [good-practices]
 author: alex_zhukovich
 ---
 Almost every application performs long-running operations, and automated UI test cases should wait until this operation is finished. Often we should wait in the following scenarios:
@@ -26,4 +28,3 @@ Sometimes we can face a different approach, when we have to integrate a test fra
 As you can see, we have more efficient approaches for replacing `sleep` in the test code, and reduce execution time. I recommend you verify conditions multiple times and don't wait until the timeout is over.
 
 Note: Many frameworks already have such functions.
-

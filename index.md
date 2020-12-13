@@ -4,15 +4,14 @@ header:
   # image: header.jpg
   # background: "rgba(0, 0, 0, 0.5)"
   # color: light
-  title: Here you learn more about UI testing
-  subtitle:
-  # search: true
+  title: 
+  subtitle: 
+  list_title: Here you learn more about UI testing
+description: Android frameworks, WEB, Naming, etc
+icon: 
+layout: home
+categories: []
 ---
-
-{% include categories.html 
-  columns="3" 
-  section="muted" 
-%}
 
 {% include faqs.html 
   multiple="true" 

@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class="uk-section uk-section-muted">
+  <div class="uk-container">
+
+    {%- if page.header.list_title -%}
+    <h2 id="general" class="uk-text-center uk-margin-remove">{{page.header.list_title}}</h2>
+    {%- else -%}
+    {%- include breadcrumbs.html -%}
+
+    <h1 style="font-size: 50px;">{{page.title}}</h1>
+    <p>{{page.description}}</p>
+    {%- endif -%}
+
+    {% assign articles = site.articles %}
+    {% assign i = page.categories.size | minus: 1 %}
+
+    <div class="uk-child-width-1-2@m uk-grid-match uk-grid-small uk-margin-medium-top uk-grid" data-uk-grid="">
+
+      {% for p in articles %}
+
+      {% assign k1 = p.categories.size %}
+      {%- if p.layout == "node" -%}
+        {% assign k2 =i | plus: 2 %}
+        {%- else -%}
+        {% assign k2 =i | plus: 1 %}
+        {%- endif -%}
+
+      {% if k1 == k2 %}
+      {%- assign s1 = "" -%}
+      {%- for l in (0..i) -%}
+      {%- assign s1 = s1 | append: p.categories[l] -%}
+      {%- endfor -%}
+
+      {%- assign s2 = page.categories | join: "" -%}
+      {% if s1 == s2 %}
+
+      <div class="uk-first-column">
+        <div class="uk-card uk-card uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded">
+          <a class="uk-position-cover" href="{{p.url | relative_url}}"></a>
+          <div class="uk-grid-small uk-grid" data-uk-grid="">
+            <div class="uk-width-auto uk-text-primary uk-flex uk-flex-middle uk-first-column">
+
+              <span data-uk-icon="icon: {%- if p.icon -%}{{p.icon}}{%- else -%}file-text{%- endif -%}; ratio: 2.6"
+                class="uk-icon">
+              </span>
+
+            </div>
+            <div class="uk-width-expand">
+              <h3 class="uk-card-title uk-margin-remove uk-text-primary">{{p.title}}</h3>
+
+              <p class="uk-text-muted uk-margin-remove">{{p.description}}</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+
+      {% endif %}
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+    {{content}}

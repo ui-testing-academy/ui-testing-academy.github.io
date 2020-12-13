@@ -1,7 +1,9 @@
 ---
+layout: article
 title: 'Separate your tests from the test automation framework'
 description: 'We will explore reasons for separating test cases from the test automation framework.'
-categories: [general, good-practices]
+permalink:  /:categories/:title/
+categories: [ good-practices]
 author: alex_zhukovich
 ---
 The testing framework has a significant impact on the test cases in a project because each framework has its own approach for handling similar situations and issues. Even if you are happy with the framework, chances are that you will change it in the future.
