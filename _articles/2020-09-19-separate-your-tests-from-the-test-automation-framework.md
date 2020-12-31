@@ -71,7 +71,7 @@ fun shouldDisplayErrorWhenPasswordIsBlank() {
 }
 ```
 
-![image](/assets/images/separate-tests-from-test-automation-framework/framework-independence.svg)
+![image](/assets/images/good-practices/separate-tests-from-test-automation-framework/framework-independence.svg)
 
 Note: We can apply more advanced techniques for separating test code from the testing framework, like the PageObject pattern.
 
