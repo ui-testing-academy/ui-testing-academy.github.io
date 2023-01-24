@@ -22,7 +22,7 @@ categories: []
 %}
 
 {% include team.html 
-  authors="alex_zhukovich, robert_konarskis, jonatas_josue_kirsch" 
+  authors="alex_zhukovich, robert_konarskis" 
   title="We are here to help" 
   subtitle="Our team is just an email away ready to answer your questions" 
   section="default" 
