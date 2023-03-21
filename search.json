@@ -1,14 +1,107 @@
----
-layout: null
----
 [
-  {% for post in site.articles %}
+  
     {
-      "title"    : "{{ post.title | escape }}",
-      "category" : "{{ post.category }}",
-      "tags"     : "{{ post.tags | join: ', ' }}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "date"     : "{{ post.date }}"
-    } {% unless forloop.last %},{% endunless %}
-  {% endfor %}
+      "title"    : "All test cases should be independent",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/good-practices/all-test-cases-should-be-independent/",
+      "date"     : "2020-09-06 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Approaches of UI testing",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/general-information/approaches-of-ui-testing/",
+      "date"     : "2020-09-06 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Naming conventions for test cases",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/naming/naming-conventions-for-test-cases/",
+      "date"     : "2020-09-06 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Separate your tests from the test automation framework",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/good-practices/separate-your-tests-from-the-test-automation-framework/",
+      "date"     : "2020-09-19 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Never use sleep in test code",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/good-practices/never-use-sleep-in-test-code/",
+      "date"     : "2020-09-20 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "Layout Inspector",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/platforms/android/tools/layout-inspector/",
+      "date"     : "2020-12-28 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "UI Automator Viewer",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/platforms/android/tools/ui-automator-viewer/",
+      "date"     : "2020-12-28 00:00:00 +0000"
+    } ,
+  
+    {
+      "title"    : "General information",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/general-information/",
+      "date"     : "2023-03-21 07:03:21 +0000"
+    } ,
+  
+    {
+      "title"    : "Good Practices",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/good-practices/",
+      "date"     : "2023-03-21 07:03:21 +0000"
+    } ,
+  
+    {
+      "title"    : "Naming",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/naming/",
+      "date"     : "2023-03-21 07:03:21 +0000"
+    } ,
+  
+    {
+      "title"    : "Tools",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/platforms/android/tools/",
+      "date"     : "2023-03-21 07:03:21 +0000"
+    } ,
+  
+    {
+      "title"    : "Android",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/platforms/android/",
+      "date"     : "2023-03-21 07:03:21 +0000"
+    } ,
+  
+    {
+      "title"    : "Platforms",
+      "category" : "",
+      "tags"     : "",
+      "url"      : "/platforms/",
+      "date"     : "2023-03-21 07:03:21 +0000"
+    } 
+  
 ]

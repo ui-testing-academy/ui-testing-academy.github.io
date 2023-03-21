@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>UI Testing Academy | UI Testing related content</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="UI Testing Academy" />
+<meta name="author" content="Alex Zhukovich" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Android frameworks, WEB, Naming, etc" />
+<meta property="og:description" content="Android frameworks, WEB, Naming, etc" />
+<meta property="og:site_name" content="UI Testing Academy" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="UI Testing Academy" />
+<script type="application/ld+json">
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/logo.svg"},"name":"Alex Zhukovich"},"author":{"@type":"Person","name":"Alex Zhukovich"},"@type":"WebSite","description":"Android frameworks, WEB, Naming, etc","headline":"UI Testing Academy","url":"/","name":"UI Testing Academy","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="/uploads/logo.svg"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
+  <link rel="alternate" type="application/rss+xml" title="UI Testing Academy" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  
+    <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+  
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,500&display=swap" rel="stylesheet">
+
+  
+</head>
+
+    <body>
+
+    
+
+
+
+
+
+
+<header class="uk-background-center-center uk-background-norepeat uk-background-cover uk-background-blend-overlay"
+  style=" background-image: url(/uploads/header.jpg);">
+  
+<nav class="uk-navbar-container uk-light">
+	<div class="uk-container">
+		<div data-uk-navbar>
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-item uk-logo" href="/"><img
+					src="/uploads/logo.svg"
+					alt="UI Testing Academy"></a>
+
+				<ul class="uk-navbar-nav uk-visible@m">
+					
+			</ul>
+		</div>
+		<div class="uk-navbar-right">
+			<ul class="uk-navbar-nav uk-visible@m">
+				
+				
+				
+				
+				
+				
+				<li class="uk-active"><a href="/" >Home</a></li>
+					
+		
+		
+		
+		</ul>
+
+		
+		<a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span
+				data-uk-navbar-toggle-icon></span> <span
+				class="uk-margin-small-left">Menu</span></a>
+		
+
+	</div>
+	</div>
+	</div>
+</nav>
+  <div class="uk-section uk-section-small uk-position-relative uk-position-z-index" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">
+    <div class="uk-container">
+      
+      
+      
+      <div class="hero-search uk-margin-bottom">
+        <!-- Html Elements for Search -->
+        <div class="uk-position-relative">
+          <div class=" uk-light">
+            <form
+              class="uk-search uk-search-default uk-width-1-1"
+              name="search-hero" onsubmit="return false;">
+              <span data-uk-search-icon="ratio: 1.2"></span>
+              <input id="search-hero" class="uk-search-input uk-form-large uk-border-rounded" type="search"
+                placeholder="Search for answers"
+                autocomplete="off" aria-label="Search for answers">
+            </form>
+          </div>
+          <ul id="search-hero-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+        </div>
+        <script>
+          SimpleJekyllSearch({
+            searchInput: document.getElementById('search-hero'),
+            resultsContainer: document.getElementById('search-hero-results'),
+            noResultsText: '<li class="no-results">No results found</li>',
+            searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+            json: "/search.json"
+          });
+          searchResults("search-hero");
+        </script>
+      </div>
+      
+    </div>
+  </div>
+</header>
+
+    <div class="uk-section uk-section-muted">
+  <div class="uk-container"><h2 id="general" class="uk-text-center uk-margin-remove">Here you learn more about UI testing</h2>
+    
+
+    <div class="uk-child-width-1-2@m uk-grid-match uk-grid-small uk-margin-medium-top uk-grid" data-uk-grid="">
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <div class="uk-first-column">
+        <div class="uk-card uk-card uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded">
+          <a class="uk-position-cover" href="/general-information/"></a>
+          <div class="uk-grid-small uk-grid" data-uk-grid="">
+            <div class="uk-width-auto uk-text-primary uk-flex uk-flex-middle uk-first-column">
+
+              <span data-uk-icon="icon:file-text; ratio: 2.6"
+                class="uk-icon">
+              </span>
+
+            </div>
+            <div class="uk-width-expand">
+              <h3 class="uk-card-title uk-margin-remove uk-text-primary">General information</h3>
+
+              <p class="uk-text-muted uk-margin-remove">General topics connected with UI testing.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      
+
+      
+
+      <div class="uk-first-column">
+        <div class="uk-card uk-card uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded">
+          <a class="uk-position-cover" href="/good-practices/"></a>
+          <div class="uk-grid-small uk-grid" data-uk-grid="">
+            <div class="uk-width-auto uk-text-primary uk-flex uk-flex-middle uk-first-column">
+
+              <span data-uk-icon="icon:star; ratio: 2.6"
+                class="uk-icon">
+              </span>
+
+            </div>
+            <div class="uk-width-expand">
+              <h3 class="uk-card-title uk-margin-remove uk-text-primary">Good Practices</h3>
+
+              <p class="uk-text-muted uk-margin-remove">Good practices which can be applied to UI testing.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      
+
+      
+
+      <div class="uk-first-column">
+        <div class="uk-card uk-card uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded">
+          <a class="uk-position-cover" href="/naming/"></a>
+          <div class="uk-grid-small uk-grid" data-uk-grid="">
+            <div class="uk-width-auto uk-text-primary uk-flex uk-flex-middle uk-first-column">
+
+              <span data-uk-icon="icon:bold; ratio: 2.6"
+                class="uk-icon">
+              </span>
+
+            </div>
+            <div class="uk-width-expand">
+              <h3 class="uk-card-title uk-margin-remove uk-text-primary">Naming</h3>
+
+              <p class="uk-text-muted uk-margin-remove">Naming conventions for test cases.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <div class="uk-first-column">
+        <div class="uk-card uk-card uk-card-default uk-card-hover uk-card-body uk-inline uk-border-rounded">
+          <a class="uk-position-cover" href="/platforms/"></a>
+          <div class="uk-grid-small uk-grid" data-uk-grid="">
+            <div class="uk-width-auto uk-text-primary uk-flex uk-flex-middle uk-first-column">
+
+              <span data-uk-icon="icon:folder; ratio: 2.6"
+                class="uk-icon">
+              </span>
+
+            </div>
+            <div class="uk-width-expand">
+              <h3 class="uk-card-title uk-margin-remove uk-text-primary">Platforms</h3>
+
+              <p class="uk-text-muted uk-margin-remove">Platform-specific information.</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+
+      
+    </div>
+  </div>
+</div>
+
+    <div class="uk-section uk-section-muted">
+    <div class="uk-container uk-container-small">
+
+        
+            <h2 class="uk-text-center">Frequently asked questions</h2>
+        
+
+        
+            <p class="uk-text-muted uk-text-center uk-text-lead">Find quicke answers to frequent pre-sale questions asked by customers</p>
+        
+
+        
+
+        <ul class="uk-margin-medium-top" data-uk-accordion="multiple: true">
+            
+                <li>
+                    <a class="uk-accordion-title uk-box-shadow-hover-small" href="#">How to send a bug report/improvement proposal/request a topic?</a>
+                    <div class="article-content uk-accordion-content link-primary"><p>We want to grow and improve the project. If you found any issue in our project and you know how to improve the project, or you want to see more topic, please share your feedback with us via <a href="https://github.com/AlexZhukovich/ui-testing.academy/issues/" target="_blank">GitHub issues</a>.</p>
+</div>                
+                </li>
+            
+        </ul>
+
+    </div>
+</div>
+
+<div class="uk-section uk-section-default section-team">
+    <div class="uk-container uk-container-expand">
+
+        
+            <h2 class="uk-text-center">We are here to help</h2>
+        
+
+        <p class="uk-text-muted uk-text-center uk-text-lead">Our team is just an email away ready to answer your questions</p>
+
+        <div class="uk-margin-medium-top uk-flex-center uk-text-center uk-margin-medium-top uk-grid-small" data-uk-grid="">
+
+        
+
+        
+
+            
+
+            <div>
+                <div class="uk-card">
+                    
+                        
+                        <img class="uk-avatar uk-border-circle" data-src="/uploads/avatar/alex_zhukovich.png" src="/uploads/avatar/alex_zhukovich.png" alt="Alex Zhukovich" data-uk-img="" />
+                    
+                    <h5 class="uk-margin-remove-bottom uk-margin-small-top">Alex Zhukovich</h5>
+                    
+                        <p class="uk-article-meta uk-margin-xsmall-top">Android Engineer</p>
+                    
+                </div>
+            </div>
+        
+
+            
+
+            <div>
+                <div class="uk-card">
+                    
+                        
+                        <img class="uk-avatar uk-border-circle" data-src="/uploads/avatar/robert_konarskis.png" src="/uploads/avatar/robert_konarskis.png" alt="Robert Konarskis" data-uk-img="" />
+                    
+                    <h5 class="uk-margin-remove-bottom uk-margin-small-top">Robert Konarskis</h5>
+                    
+                        <p class="uk-article-meta uk-margin-xsmall-top">Android Engineer</p>
+                    
+                </div>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
+
+
+
+    <div id="offcanvas-posts" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="/uploads/logo.svg" alt="UI Testing Academy"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top uk-text-center">
+            
+                
+
+                
+
+                
+                    <li class="uk-active"><a href="/" >Home</a></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+<div class="uk-first-column">
+    <a href="https://twitter.com/ui_test_academy?lang=en" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="twitter"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/ui-testing-academy/ui-testing-academy.github.io" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="github"></a>
+</div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <footer class="uk-section uk-text-center uk-text-muted">
+    <div class="uk-container uk-container-small">
+
+        <div>
+            <ul class="uk-subnav uk-flex-center">
+                
+                    
+                    
+                    
+                        <li class="uk-active"><a href="/" >Home</a></li>
+                    
+                
+            </ul>
+        </div>
+        <div class="uk-margin-medium">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+<div class="uk-first-column">
+    <a href="https://twitter.com/ui_test_academy?lang=en" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="twitter"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/ui-testing-academy/ui-testing-academy.github.io" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="github"></a>
+</div>
+
+
+
+
+            </div>
+        </div>
+        <div class="uk-margin-medium uk-text-small copyright link-secondary">Made by Alex Zhukovich.</div>
+
+    </div>
+</footer>
+
+
+    
+
+    </body>
+
+</html>

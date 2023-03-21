@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>UI Automator Viewer | UI Testing Academy</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="UI Automator Viewer" />
+<meta name="author" content="alex_zhukovich" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Find view information with UiAutomator Viewer." />
+<meta property="og:description" content="Find view information with UiAutomator Viewer." />
+<meta property="og:site_name" content="UI Testing Academy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="UI Automator Viewer" />
+<script type="application/ld+json">
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/logo.svg"},"name":"alex_zhukovich"},"author":{"@type":"Person","name":"alex_zhukovich"},"@type":"BlogPosting","dateModified":"2020-12-28T00:00:00+00:00","datePublished":"2020-12-28T00:00:00+00:00","description":"Find view information with UiAutomator Viewer.","headline":"UI Automator Viewer","mainEntityOfPage":{"@type":"WebPage","@id":"/platforms/android/tools/ui-automator-viewer/"},"url":"/platforms/android/tools/ui-automator-viewer/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="/uploads/logo.svg"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
+  <link rel="alternate" type="application/rss+xml" title="UI Testing Academy" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  
+    <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+  
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,500&display=swap" rel="stylesheet">
+
+  
+</head>
+
+    <body>
+
+    
+
+
+
+
+
+
+<header class="uk-background-center-center uk-background-norepeat uk-background-cover uk-background-blend-overlay"
+  style=" background-image: url(/uploads/header.jpg);">
+  
+<nav class="uk-navbar-container uk-light">
+	<div class="uk-container">
+		<div data-uk-navbar>
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-item uk-logo" href="/"><img
+					src="/uploads/logo.svg"
+					alt="UI Testing Academy"></a>
+
+				<ul class="uk-navbar-nav uk-visible@m">
+					
+			</ul>
+		</div>
+		<div class="uk-navbar-right">
+			<ul class="uk-navbar-nav uk-visible@m">
+				
+				
+				
+				
+				
+				
+				<li><a href="/" >Home</a></li>
+					
+		
+		
+		
+		</ul>
+
+		
+		<a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span
+				data-uk-navbar-toggle-icon></span> <span
+				class="uk-margin-small-left">Menu</span></a>
+		
+
+	</div>
+	</div>
+	</div>
+</nav>
+  <div class="uk-section uk-section-small uk-position-relative uk-position-z-index" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">
+    <div class="uk-container">
+      
+      
+      
+      <div class="hero-search uk-margin-bottom">
+        <!-- Html Elements for Search -->
+        <div class="uk-position-relative">
+          <div class=" uk-light">
+            <form
+              class="uk-search uk-search-default uk-width-1-1"
+              name="search-hero" onsubmit="return false;">
+              <span data-uk-search-icon="ratio: 1.2"></span>
+              <input id="search-hero" class="uk-search-input uk-form-large uk-border-rounded" type="search"
+                placeholder="Search for answers"
+                autocomplete="off" aria-label="Search for answers">
+            </form>
+          </div>
+          <ul id="search-hero-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+        </div>
+        <script>
+          SimpleJekyllSearch({
+            searchInput: document.getElementById('search-hero'),
+            resultsContainer: document.getElementById('search-hero-results'),
+            noResultsText: '<li class="no-results">No results found</li>',
+            searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+            json: "/search.json"
+          });
+          searchResults("search-hero");
+        </script>
+      </div>
+      
+    </div>
+  </div>
+</header>
+
+    <div class="uk-section uk-section-muted">
+  <div class="uk-container"><ul id="breadcrumbs" class="uk-breadcrumb">
+  
+  <li><a href="/">Home</a></li>
+  
+  
+   <li><a
+    href="/platforms/">Platforms</a></li>
+  
+  
+  
+   <li><a
+    href="/platforms/android/">Android</a></li>
+  
+  
+  
+   <li><a
+    href="/platforms/android/tools/">Tools</a></li>
+  
+  
+  
+   
+  
+  
+</ul><div class="uk-background-default uk-border-rounded uk-box-shadow-small">
+      <div class="uk-container uk-container-xsmall uk-padding-large">
+        <article class="uk-article">
+          <h1 class="uk-article-title">UI Automator Viewer</h1>
+          <div class="uk-article-meta uk-margin uk-flex uk-flex-middle">
+            
+
+
+  
+  <img class="uk-border-circle uk-avatar-small" data-src="/uploads/avatar/alex_zhukovich.png" src="/uploads/avatar/alex_zhukovich.png" alt="Alex Zhukovich" data-uk-img>
+
+
+<div>
+  
+    Written by Alex Zhukovich<br>
+  
+  <time datetime="2020-12-28T00:00:00+00:00">
+    
+    Dec 28, 2020
+  </time>
+</div>
+          </div>
+          
+          <div class="uk-article-content">
+            <p>The <strong>UI Automator Viewer</strong> tool provides a screenshot of an active application on a device or emulator. We can scan and analyse a screen of any application which is installed on the device.</p>
+
+<p>This application is not a part of Android Studio; it means that we should run it from <code class="language-plaintext highlighter-rouge">{ANDROID-SDK}/tools/bin</code> folder.</p>
+
+<blockquote>
+  <p>The <strong>UI Automator Viewer</strong> requires the JDK 8.</p>
+</blockquote>
+
+<p><img src="/assets/images/platforms/android/tools/ui-automator-viewer/ui-automator-viewer.jpg" alt="image" /></p>
+
+<p>As you can see from the screenshot, visually, this tool has got 3 sections:</p>
+<ul>
+  <li><strong>View Tree</strong> provides a hierarchy of views in the layout</li>
+  <li><strong>Screenshot</strong> shows a screenshot of your app with layout bounds of each view</li>
+  <li><strong>Properties Table</strong> allows you to check any property connected with each view on the screen</li>
+</ul>
+
+<p>The UI Automator Viewer tool provides essential information about the view, like resource ID, package, text, content-description, etc.</p>
+
+<p>We can analyze any application installed on the device or emulator.</p>
+
+            
+              <div class="share uk-text-center uk-margin-large-top">
+    
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=UI+Automator+Viewer&url=/platforms/android/tools/ui-automator-viewer/&via=ui_test_academy&related=ui_test_academy" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    
+    
+        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fplatforms%2Fandroid%2Ftools%2Fui-automator-viewer%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    
+</div>
+            
+          </div>
+          <div class="uk-margin-large-top related-box">
+    <h4 >Related Posts</h4>
+
+    
+    
+    
+
+    <ul class="uk-list">
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+            <li><a href="/platforms/android/tools/layout-inspector/">Layout Inspector</a></li>
+            
+            
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+</ul>
+</div>
+<style></style>
+
+          
+        </article>
+        <script>
+          // Table of contents scroll to
+          UIkit.scroll('#markdown-toc a', {
+            duration: 400,
+            offset: 40
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id="offcanvas-posts" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="/uploads/logo.svg" alt="UI Testing Academy"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top uk-text-center">
+            
+                
+
+                
+
+                
+                    <li><a href="/" >Home</a></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+<div class="uk-first-column">
+    <a href="https://twitter.com/ui_test_academy?lang=en" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="twitter"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/ui-testing-academy/ui-testing-academy.github.io" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="github"></a>
+</div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <footer class="uk-section uk-text-center uk-text-muted">
+    <div class="uk-container uk-container-small">
+
+        <div>
+            <ul class="uk-subnav uk-flex-center">
+                
+                    
+                    
+                    
+                        <li><a href="/" >Home</a></li>
+                    
+                
+            </ul>
+        </div>
+        <div class="uk-margin-medium">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+<div class="uk-first-column">
+    <a href="https://twitter.com/ui_test_academy?lang=en" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="twitter"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/ui-testing-academy/ui-testing-academy.github.io" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="github"></a>
+</div>
+
+
+
+
+            </div>
+        </div>
+        <div class="uk-margin-medium uk-text-small copyright link-secondary">Made by Alex Zhukovich.</div>
+
+    </div>
+</footer>
+
+
+    
+
+    </body>
+
+</html>

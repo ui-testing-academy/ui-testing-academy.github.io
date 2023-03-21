@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Approaches of UI testing | UI Testing Academy</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Approaches of UI testing" />
+<meta name="author" content="alex_zhukovich" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="Different ways of UI testing can be done: manual testing, record-and-replay testing, and model-based testing. We will explore the pros and cons of each approach." />
+<meta property="og:description" content="Different ways of UI testing can be done: manual testing, record-and-replay testing, and model-based testing. We will explore the pros and cons of each approach." />
+<meta property="og:site_name" content="UI Testing Academy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-06T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Approaches of UI testing" />
+<script type="application/ld+json">
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/logo.svg"},"name":"alex_zhukovich"},"author":{"@type":"Person","name":"alex_zhukovich"},"@type":"BlogPosting","dateModified":"2020-09-06T00:00:00+00:00","datePublished":"2020-09-06T00:00:00+00:00","description":"Different ways of UI testing can be done: manual testing, record-and-replay testing, and model-based testing. We will explore the pros and cons of each approach.","headline":"Approaches of UI testing","mainEntityOfPage":{"@type":"WebPage","@id":"/general-information/approaches-of-ui-testing/"},"url":"/general-information/approaches-of-ui-testing/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:image" content="/uploads/logo.svg"/>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="shortcut icon" type="image/png" href="/uploads/favicon.png" >
+  <link rel="alternate" type="application/rss+xml" title="UI Testing Academy" href="/feed.xml">
+  <script src="/assets/js/main.js"></script>
+  
+    <script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+  
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,500&display=swap" rel="stylesheet">
+
+  
+</head>
+
+    <body>
+
+    
+
+
+
+
+
+
+<header class="uk-background-center-center uk-background-norepeat uk-background-cover uk-background-blend-overlay"
+  style=" background-image: url(/uploads/header.jpg);">
+  
+<nav class="uk-navbar-container uk-light">
+	<div class="uk-container">
+		<div data-uk-navbar>
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-item uk-logo" href="/"><img
+					src="/uploads/logo.svg"
+					alt="UI Testing Academy"></a>
+
+				<ul class="uk-navbar-nav uk-visible@m">
+					
+			</ul>
+		</div>
+		<div class="uk-navbar-right">
+			<ul class="uk-navbar-nav uk-visible@m">
+				
+				
+				
+				
+				
+				
+				<li><a href="/" >Home</a></li>
+					
+		
+		
+		
+		</ul>
+
+		
+		<a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span
+				data-uk-navbar-toggle-icon></span> <span
+				class="uk-margin-small-left">Menu</span></a>
+		
+
+	</div>
+	</div>
+	</div>
+</nav>
+  <div class="uk-section uk-section-small uk-position-relative uk-position-z-index" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">
+    <div class="uk-container">
+      
+      
+      
+      <div class="hero-search uk-margin-bottom">
+        <!-- Html Elements for Search -->
+        <div class="uk-position-relative">
+          <div class=" uk-light">
+            <form
+              class="uk-search uk-search-default uk-width-1-1"
+              name="search-hero" onsubmit="return false;">
+              <span data-uk-search-icon="ratio: 1.2"></span>
+              <input id="search-hero" class="uk-search-input uk-form-large uk-border-rounded" type="search"
+                placeholder="Search for answers"
+                autocomplete="off" aria-label="Search for answers">
+            </form>
+          </div>
+          <ul id="search-hero-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
+        </div>
+        <script>
+          SimpleJekyllSearch({
+            searchInput: document.getElementById('search-hero'),
+            resultsContainer: document.getElementById('search-hero-results'),
+            noResultsText: '<li class="no-results">No results found</li>',
+            searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+            json: "/search.json"
+          });
+          searchResults("search-hero");
+        </script>
+      </div>
+      
+    </div>
+  </div>
+</header>
+
+    <div class="uk-section uk-section-muted">
+  <div class="uk-container"><ul id="breadcrumbs" class="uk-breadcrumb">
+  
+  <li><a href="/">Home</a></li>
+  
+  
+   <li><a
+    href="/general-information/">General information</a></li>
+  
+  
+  
+   
+  
+  
+</ul><div class="uk-background-default uk-border-rounded uk-box-shadow-small">
+      <div class="uk-container uk-container-xsmall uk-padding-large">
+        <article class="uk-article">
+          <h1 class="uk-article-title">Approaches of UI testing</h1>
+          <div class="uk-article-meta uk-margin uk-flex uk-flex-middle">
+            
+
+
+  
+  <img class="uk-border-circle uk-avatar-small" data-src="/uploads/avatar/alex_zhukovich.png" src="/uploads/avatar/alex_zhukovich.png" alt="Alex Zhukovich" data-uk-img>
+
+
+<div>
+  
+    Written by Alex Zhukovich<br>
+  
+  <time datetime="2020-09-06T00:00:00+00:00">
+    
+    Sep 6, 2020
+  </time>
+</div>
+          </div>
+          
+          <div class="uk-article-content">
+            <p>UI Testing can be done in the following ways:</p>
+<ul>
+  <li>Manual testing</li>
+  <li>Record and replay testing</li>
+  <li>Model-based testing</li>
+</ul>
+
+<p><strong>Manual testing</strong> is a type of software testing in which a tester performs actions for interaction with applications to check whether the software product is functioning correctly and meets all requirements. All test cases are executed manually without using any automated tools.</p>
+
+<ul>
+  <li>Pros
+    <ul>
+      <li>Does not require programming or automation knowledge</li>
+      <li>Helps to find critical bugs in the application</li>
+    </ul>
+  </li>
+  <li>Cons
+    <ul>
+      <li>It is a time-consuming approach</li>
+      <li>Quality depends on the capabilities of the tester/testing team, the quality of the requirements and the timeframe.</li>
+      <li>Usually, all test cases cannot be covered because of the size of the application or the timeframe.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Record and Replay</strong> testing is a type of software testing in which a human record set of actions with automation tools and later on, these steps can be reproduced. Future runs can use various data sets for test cases.</p>
+
+<ul>
+  <li>Pros
+    <ul>
+      <li>Does not require programming and automation knowledge</li>
+      <li>Can be used as a transition tool from manual to automation testing approach</li>
+      <li>Can be used as an educational tool for learning the testing framework</li>
+      <li>Can be used as a tool for generating test cases before refactoring internal implementations</li>
+    </ul>
+  </li>
+  <li>Cons
+    <ul>
+      <li>Recorded test cases can be broken after minor changes in the application’s behavior, and often test cases should be recorded from the very beginning</li>
+      <li>Recorded test cases can be broken after network speed changes because such tools usually record a “waiting time”</li>
+      <li>Sometimes such tools generate unreadable and unmaintainable code, like Espresso Test Recorder</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Model-based testing</strong> is a type of software testing in which a model of the software product will be created initially. The model is a description of system behavior. Usually, such models help to fully understand an application or feature that simplifies creating efficient test cases that can be automated.</p>
+
+<ul>
+  <li>Pros
+    <ul>
+      <li>Allows creating highly efficient test cases</li>
+      <li>Helps achieve high test coverage</li>
+    </ul>
+  </li>
+  <li>Cons
+    <ul>
+      <li>Requires programming skills</li>
+      <li>It requires more time to implement the test suite</li>
+      <li>The detailed model should be created before creating test cases</li>
+    </ul>
+  </li>
+</ul>
+
+
+            
+              <div class="share uk-text-center uk-margin-large-top">
+    
+        <a class="uk-link-muted" href="https://twitter.com/intent/tweet?text=Approaches+of+UI+testing&url=/general-information/approaches-of-ui-testing/&via=ui_test_academy&related=ui_test_academy" rel="nofollow" target="_blank" title="Share on Twitter" onclick="window.open(this.href, 'twitter', 'width=550,height=235');return false;"><span data-uk-icon="icon: twitter; ratio: 1.2"></span></a>
+    
+    
+        <a class="uk-link-muted uk-margin-small-left" href="https://www.facebook.com/sharer/sharer.php?u=%2Fgeneral-information%2Fapproaches-of-ui-testing%2F" rel="nofollow" target="_blank" title="Share on Facebook" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"><span data-uk-icon="icon: facebook; ratio: 1.2"></span></a>
+    
+</div>
+            
+          </div>
+          <div class="uk-margin-large-top related-box">
+    <h4 >Related Posts</h4>
+
+    
+    
+    
+
+    <ul class="uk-list">
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+        
+        
+
+        
+
+        
+
+    
+</ul>
+</div>
+<style>.related-box {
+        display: none;
+    }</style>
+
+          
+        </article>
+        <script>
+          // Table of contents scroll to
+          UIkit.scroll('#markdown-toc a', {
+            duration: 400,
+            offset: 40
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id="offcanvas-posts" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        
+
+    </div>
+</div>
+
+
+    <div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <a class="uk-logo uk-margin-small-bottom" href="/"><img src="/uploads/logo.svg" alt="UI Testing Academy"></a>
+     
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+      
+        <ul class="uk-nav uk-nav-primary uk-margin-top uk-text-center">
+            
+                
+
+                
+
+                
+                    <li><a href="/" >Home</a></li>
+                
+            
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+<div class="uk-first-column">
+    <a href="https://twitter.com/ui_test_academy?lang=en" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="twitter"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/ui-testing-academy/ui-testing-academy.github.io" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="github"></a>
+</div>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <footer class="uk-section uk-text-center uk-text-muted">
+    <div class="uk-container uk-container-small">
+
+        <div>
+            <ul class="uk-subnav uk-flex-center">
+                
+                    
+                    
+                    
+                        <li><a href="/" >Home</a></li>
+                    
+                
+            </ul>
+        </div>
+        <div class="uk-margin-medium">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                
+<div class="uk-first-column">
+    <a href="https://twitter.com/ui_test_academy?lang=en" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="twitter"></a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+    <a href="https://github.com/ui-testing-academy/ui-testing-academy.github.io" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank" rel="noopener" aria-label="github"></a>
+</div>
+
+
+
+
+            </div>
+        </div>
+        <div class="uk-margin-medium uk-text-small copyright link-secondary">Made by Alex Zhukovich.</div>
+
+    </div>
+</footer>
+
+
+    
+
+    </body>
+
+</html>
